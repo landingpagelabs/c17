@@ -114,3 +114,5 @@ These came from the source markup and are worth fixing:
   unclosed opening quote. Seeded verbatim — fix it in the Studio.
 - The congrats page ships placeholder copy: "Share Lorem Ipsum", "Trust
   statement lorem ipsum dolor sit amet" and "TRUSTED BY 200+ LOREM IPSUM".
+
+<!-- deploy: 2026-07-23 -->
