@@ -233,9 +233,9 @@
   .hero_vector {
     width: 100%;
     height: auto;
-    /* Design has the flap starting ~75px above the results title; at
-       bottom:40px it sat 52px too low on a 390px screen. */
-    bottom: 92px;
+    /* Design (5811:3853) has the flap starting ~75px above the results
+       title. Re-tuned after the eyebrow became a single line. */
+    bottom: 34px;
   }
 
   .quote_submit {
