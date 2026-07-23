@@ -510,7 +510,8 @@
     font-size: 18px;
     font-weight: 600;
     letter-spacing: 0em;
-    color: #5900ff;
+    /* Grey until every field is filled; .is-active flips it purple */
+    color: #5A5A5A;
     padding-top: 52px;
 }
 
@@ -523,15 +524,10 @@
     flex: none;
 }
 
-/* Кнопка приглушена, поки всі поля не заповнені (клікабельна — показує помилки) */
+/* Клікабельна і в сірому стані — показує помилки валідації */
 .quote_submit {
-    opacity: 0.45;
     cursor: pointer;
-    transition: opacity 0.25s ease;
-}
-
-.quote_submit.is-active {
-    opacity: 1;
+    transition: color 0.25s ease;
 }
 
 /* ---- errors ---- */

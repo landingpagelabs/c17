@@ -459,8 +459,7 @@
     left: 0;
     justify-content: flex-start;
     /* Місце під картинку зліва (position:absolute, ~107px), щоб текст не залазив */
-    padding-left: 116px;
-    padding-right: 14px;
+    padding: 26px 20px 18px 116px;
   }
 
   .compare_table-bottom-text {

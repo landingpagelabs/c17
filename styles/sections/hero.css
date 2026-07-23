@@ -54,9 +54,10 @@
         bottom: 0;
         left: 50%;
         transform: translateX(-50%);
-        /* Full-bleed: the flap fills the viewport width on every screen
-           (Tyce 07-23), escaping the section's side padding. */
-        width: 100vw;
+        /* Content width, sitting inside the vertical hairlines and starting
+           just under the scroll chevron (Figma 5082:24665 / 5082:24349 —
+           Tyce 07-23 night, supersedes the full-bleed call). */
+        width: min(1188px, 100%);
         max-width: none;
         height: auto;
     }

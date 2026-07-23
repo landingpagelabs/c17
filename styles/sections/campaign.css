@@ -60,6 +60,11 @@
     pointer-events: none;
 }
 
+/* Hairline above the trust strip (Figma 5257:10515 — 1px top stroke only) */
+.campaign_image {
+    border-top: 1px solid #EDEDED;
+}
+
 .campaign_image-mobile {
     display: none;
 }

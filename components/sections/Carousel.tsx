@@ -6,7 +6,8 @@ export function Carousel({ data }: { data: CarouselType | null }) {
   if (!data) return null;
 
   return (
-    <section className="carousel">
+    // id: the footer "All Case Studies" link scrolls here.
+    <section className="carousel" id="case-studies">
       <div className="padding-global decor">
         <div className="container-large">
           <div className="carousel_wrapper">
