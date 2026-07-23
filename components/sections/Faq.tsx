@@ -53,6 +53,18 @@ export function Faq({ data }: { data: FaqType | null }) {
                 loading="lazy"
                 decoding="async"
               />
+              {/* The C17 chip floats above the board and levitates slowly.
+                  Position/size derive from the Figma composition (35.5% /
+                  22.48% / 29% of the 1080x469 frame). */}
+              <img
+                className="faq_chip"
+                src="/images/sections/faq/chip.webp"
+                width={700}
+                height={512}
+                alt=""
+                loading="lazy"
+                decoding="async"
+              />
             </div>
             <div className="faq_bottom-mobile">
               <img

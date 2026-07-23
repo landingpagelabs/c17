@@ -55,6 +55,29 @@
     width: 100%;
     max-width: 1080px;
     margin: 0 auto;
+    position: relative;
+}
+
+/* C17 chip: separate layer over the board, levitating slowly.
+   Offsets = the chip group's position in the Figma composition. */
+.faq_chip {
+    position: absolute;
+    left: 35.5%;
+    top: 22.48%;
+    width: 29%;
+    height: auto;
+    animation: chip-levitate 5.5s ease-in-out infinite;
+    will-change: transform;
+    pointer-events: none;
+}
+
+@keyframes chip-levitate {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-3.5%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .faq_chip { animation: none; }
 }
 
 .item-faq_panel {
