@@ -19,6 +19,10 @@ import type { HomePage } from "../sanity/types";
 
 export const revalidate = 60;
 
+export const metadata = {
+  alternates: { canonical: "/" },
+};
+
 export default async function Home() {
   const data = await client.fetch<HomePage>(homePageQuery);
 

@@ -8,7 +8,11 @@ import type { PreCall as PreCallType } from "../../sanity/types";
 
 export const revalidate = 60;
 
-export const metadata: Metadata = { title: "Pre-call | C17 Lab" };
+// Funnel utility page — never in search results, even after cutover.
+export const metadata: Metadata = {
+  title: "Pre-call | C17 Lab",
+  robots: { index: false, follow: false },
+};
 
 /** No site header or footer — the page ships its own slim header. */
 export default async function PreCallPage() {

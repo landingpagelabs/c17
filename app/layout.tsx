@@ -1,17 +1,47 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 
 import "../styles/main.css";
+import { SITE_DESCRIPTION, SITE_LIVE, SITE_NAME, SITE_TITLE, SITE_URL } from "../lib/seo";
 
 const GTM_ID = "GTM-KLBG4X5C";
 
 export const metadata: Metadata = {
-  title: "C17 | AI Sales As A Service",
-  description:
-    "We build the outbound system, get replies from hard-to-reach buyers, book meetings with our SDRs and then install it in-house.",
+  metadataBase: new URL(SITE_URL),
+  title: SITE_TITLE,
+  description: SITE_DESCRIPTION,
   // TabAttention swaps this href while the tab is backgrounded.
   icons: { icon: "/images/header/favicon-default.png" },
   verification: { google: "V333n3ud0teknMuHjwtOSlUZHJP2VWRqmZttZjxYt4U" },
+  // Whole-site noindex until the c17.ai cutover (see lib/seo.ts). Pages may
+  // override robots; congrats/pre-call pin their own permanent noindex.
+  ...(SITE_LIVE ? {} : { robots: { index: false, follow: false } }),
+  openGraph: {
+    type: "website",
+    siteName: SITE_NAME,
+    url: "/",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    images: [{ url: "/images/og.png", width: 1200, height: 630, alt: SITE_TITLE }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    images: ["/images/og.png"],
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#ffffff",
+};
+
+const ORG_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: SITE_NAME,
+  url: SITE_URL,
+  logo: `${SITE_URL}/images/footer/C17_logo.webp`,
 };
 
 export default function RootLayout({
@@ -29,6 +59,10 @@ export default function RootLayout({
         <link rel="preload" href="/fonts/PPMori-SemiBold.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
       </head>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(ORG_SCHEMA) }}
+        />
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe

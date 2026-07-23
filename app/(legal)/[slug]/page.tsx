@@ -38,7 +38,10 @@ const load = (slug: string) =>
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const { page } = await load(slug);
-  return { title: page?.pageTitle || page?.title };
+  return {
+    title: page?.pageTitle || page?.title,
+    alternates: { canonical: `/${slug}` },
+  };
 }
 
 export default async function LegalPage({ params }: Props) {
