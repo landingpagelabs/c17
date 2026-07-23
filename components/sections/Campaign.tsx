@@ -139,6 +139,13 @@ export function Campaign({ data }: { data: CampaignType | null }) {
                     <div className="campaign_step-finish-title">
                       <h4 className="text-label-large">{data.outcomeYes?.title}</h4>
                     </div>
+                    {/* iClosed inline calendar — Pilot Call w/ C17 Lab. The
+                        widget script is loaded globally in app/layout.tsx. */}
+                    <div
+                      className="iclosed-widget campaign_calendar"
+                      data-url="https://app.iclosed.io/e/c17lab/pilot-call-w-c17-lab"
+                      title="Pilot Call w/ C17 Lab"
+                    ></div>
                   </div>
 
                   <div className="campaign_step" if-step="No">
