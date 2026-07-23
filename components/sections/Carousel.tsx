@@ -1,5 +1,5 @@
 import { CloseIcon, ModalCtaArrowIcon, PlayIcon } from "../icons";
-import { imageSrc } from "../../sanity/lib/image";
+import { imageProps } from "../../sanity/lib/image";
 import type { Carousel as CarouselType } from "../../sanity/types";
 
 export function Carousel({ data }: { data: CarouselType | null }) {
@@ -34,11 +34,14 @@ export function Carousel({ data }: { data: CarouselType | null }) {
                   >
                     <span className="carousel_card-media">
                       <img
-                        src={imageSrc(
+                        {...imageProps(
                           card.image,
-                          `/images/sections/carousel/cards/${card.brand}.webp`
+                          `/images/sections/carousel/cards/${card.brand}.webp`,
+                          { width: 350 }
                         )}
                         alt={`${card.name} customer testimonial`}
+                        loading="lazy"
+                        decoding="async"
                       />
                     </span>
                     <span className="carousel_card-tip">{card.name}</span>
@@ -62,11 +65,14 @@ export function Carousel({ data }: { data: CarouselType | null }) {
                   >
                     <span className="carousel_dock-tip">{card.name}</span>
                     <img
-                      src={imageSrc(
+                      {...imageProps(
                         card.icon,
-                        `/images/sections/carousel/icons/${card.brand}.webp`
+                        `/images/sections/carousel/icons/${card.brand}.webp`,
+                        { width: 54 }
                       )}
                       alt=""
+                      loading="lazy"
+                      decoding="async"
                     />
                     <span className="carousel_dock-dot"></span>
                   </button>

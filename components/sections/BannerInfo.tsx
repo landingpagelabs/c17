@@ -1,6 +1,6 @@
 import { SignoffLineIcon, SignoffQuoteIcon } from "./congrats-icons";
 import { CtaMain } from "../CtaMain";
-import { imageSrc } from "../../sanity/lib/image";
+import { imageProps } from "../../sanity/lib/image";
 import type { BannerInfo as BannerInfoType } from "../../sanity/types";
 
 export function BannerInfo({ data }: { data: BannerInfoType | null }) {
@@ -10,7 +10,7 @@ export function BannerInfo({ data }: { data: BannerInfoType | null }) {
     <section className="banner-info">
       <div className="padding-global decor tb-decor">
         <div className="banner-info_decor">
-          <img src="/images/sections/congrats/decor-left.webp" width={392} height={2679} alt="" />
+          <img src="/images/sections/congrats/decor-left.webp" width={392} height={2679} alt="" loading="lazy" decoding="async" />
         </div>
         <div className="container-large">
           <div className="banner-info_big-wrapper">
@@ -27,7 +27,7 @@ export function BannerInfo({ data }: { data: BannerInfoType | null }) {
                 <div className="banner-info_content">
                   <SignoffQuoteIcon />
                   <div className="banner-info_content-avatar">
-                    <img src={imageSrc(data.avatar, "")} alt="" />
+                    <img {...imageProps(data.avatar, "", { width: 44 })} alt="" loading="lazy" decoding="async" />
                   </div>
                   <div className="banner-info_content-text">
                     <p className="text-label-large">{data.name}</p>
@@ -48,28 +48,31 @@ export function BannerInfo({ data }: { data: BannerInfoType | null }) {
               <div className="banner-info_list">
                 {data.logos?.map((logo, i) => (
                   <div className="banner-info_list-item" key={i}>
-                    <img src={imageSrc(logo, "")} alt="" />
+                    <img {...imageProps(logo, "", { width: 120 })} alt="" loading="lazy" decoding="async" />
                   </div>
                 ))}
               </div>
 
               <div className="banner-info_image-big">
                 <img
-                  src={imageSrc(
+                  {...imageProps(
                     data.image,
-                    "/images/sections/congrats/banner-images.webp"
+                    "/images/sections/congrats/banner-images.webp",
+                    { width: 1080 }
                   )}
                   alt=""
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="banner-info_image-big-mobile">
-                <img src="/images/sections/congrats/banner-images-2.webp" width={1953} height={163} alt="" />
+                <img src="/images/sections/congrats/banner-images-2.webp" width={1953} height={163} alt="" loading="lazy" decoding="async" />
               </div>
             </div>
           </div>
         </div>
         <div className="banner-info_decor right">
-          <img src="/images/sections/congrats/decor-right.webp" width={392} height={2679} alt="" />
+          <img src="/images/sections/congrats/decor-right.webp" width={392} height={2679} alt="" loading="lazy" decoding="async" />
         </div>
       </div>
     </section>

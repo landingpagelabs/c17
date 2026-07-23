@@ -187,8 +187,7 @@ export function HowItWorks({ data }: { data: HowItWorksType | null }) {
                   className="hiw_clock-track"
                   src="/images/sections/how-it-works/clock-circle.webp" width={1428} height={1428}
                   alt=""
-                  aria-hidden="true"
-                />
+                  aria-hidden="true" loading="lazy" decoding="async" />
                 <svg
                   className="hiw_clock"
                   viewBox="0 0 714 714"

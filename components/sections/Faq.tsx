@@ -1,4 +1,4 @@
-import { imageSrc } from "../../sanity/lib/image";
+import { imageProps } from "../../sanity/lib/image";
 import type { Faq as FaqType } from "../../sanity/types";
 
 function PlusIcon() {
@@ -44,11 +44,14 @@ export function Faq({ data }: { data: FaqType | null }) {
             <div className="faq_bottom">
               <img
                 className="faq-bottom_img"
-                src={imageSrc(
+                {...imageProps(
                   data.bottomImage,
-                  "/images/sections/faq/faq_bottom_image.webp"
+                  "/images/sections/faq/faq_bottom_image.webp",
+                  { width: 1080 }
                 )}
                 alt="faq bottom image"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <div className="faq_bottom-mobile">
@@ -56,6 +59,8 @@ export function Faq({ data }: { data: FaqType | null }) {
                 className="faq-bottom_img"
                 src="/images/sections/faq/faq-mobile.webp" width={860} height={513}
                 alt="faq bottom image"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>

@@ -1,4 +1,4 @@
-import { imageSrc } from "../../sanity/lib/image";
+import { imageProps } from "../../sanity/lib/image";
 import type { Header as HeaderType } from "../../sanity/types";
 
 export function Header({ data }: { data: HeaderType | null }) {
@@ -10,7 +10,8 @@ export function Header({ data }: { data: HeaderType | null }) {
         <div className="container-large">
           <div className="header_wrapper">
             <div className="header_logo">
-              <img src={imageSrc(data.logo, "/images/header/Logo.webp")} alt="" />
+              {/* Above the fold — stays eager. */}
+              <img {...imageProps(data.logo, "/images/header/Logo.webp", { width: 114 })} alt="" />
             </div>
 
             <nav className="header_nav">

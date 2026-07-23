@@ -5,7 +5,7 @@ import {
   StraplineVerified,
 } from "./compare-icons";
 import { CtaMain } from "../CtaMain";
-import { imageSrc } from "../../sanity/lib/image";
+import { imageProps } from "../../sanity/lib/image";
 import type { Compare as CompareType } from "../../sanity/types";
 
 /** One icon per row, matched by position — kept in code, not the CMS. */
@@ -59,8 +59,10 @@ export function Compare({ data }: { data: CompareType | null }) {
                   <div className="compare_table-col first opacity"></div>
                   <div className="compare_table-col top second">
                     <img
-                      src={imageSrc(cols?.c17Logo, "/images/sections/compare/c17-logo.webp")}
+                      {...imageProps(cols?.c17Logo, "/images/sections/compare/c17-logo.webp", { width: 120 })}
                       alt=""
+                      loading="lazy"
+                      decoding="async"
                     />
                     <div className="text-body-small white">{cols?.c17Note}</div>
                   </div>
@@ -102,11 +104,14 @@ export function Compare({ data }: { data: CompareType | null }) {
               <div className="compare_table-bottom">
                 <div className="compare_table-bottom-image">
                   <img
-                    src={imageSrc(
+                    {...imageProps(
                       data.bottomImage,
-                      "/images/sections/compare/image-table-bot.webp"
+                      "/images/sections/compare/image-table-bot.webp",
+                      { width: 1080 }
                     )}
                     alt=""
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div className="compare_table-bottom-text">
@@ -133,8 +138,10 @@ export function Compare({ data }: { data: CompareType | null }) {
                 <div className="compare_strapline-info">
                   <div className="compare_strapline-image">
                     <img
-                      src={imageSrc(t0?.avatar, "/images/sections/compare/avatar.webp")}
+                      {...imageProps(t0?.avatar, "/images/sections/compare/avatar.webp", { width: 44 })}
                       alt=""
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                   <p className="text-label-extra-small primary bold">{t0?.name}</p>
@@ -154,8 +161,10 @@ export function Compare({ data }: { data: CompareType | null }) {
                 <div className="compare_strapline-info">
                   <div className="compare_strapline-image">
                     <img
-                      src={imageSrc(t1?.avatar, "/images/sections/compare/avatar-2.webp")}
+                      {...imageProps(t1?.avatar, "/images/sections/compare/avatar-2.webp", { width: 44 })}
                       alt=""
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                   <p className="text-label-extra-small primary bold">{t1?.name}</p>

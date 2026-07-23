@@ -1,4 +1,4 @@
-import { imageSrc } from "../../sanity/lib/image";
+import { imageProps } from "../../sanity/lib/image";
 import type { Services as ServicesType } from "../../sanity/types";
 
 export function Services({ data }: { data: ServicesType | null }) {
@@ -35,11 +35,14 @@ export function Services({ data }: { data: ServicesType | null }) {
 
                     <div className={big ? "services_image big" : "services_image"}>
                       <img
-                        src={imageSrc(
+                        {...imageProps(
                           item.image,
-                          `/images/sections/services/item-${i + 1}.webp`
+                          `/images/sections/services/item-${i + 1}.webp`,
+                          { width: big ? 726 : 330 }
                         )}
                         alt=""
+                        loading="lazy"
+                        decoding="async"
                       />
                     </div>
                   </div>

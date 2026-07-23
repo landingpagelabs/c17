@@ -3,7 +3,7 @@ import {
   BottomDividerIcon,
   BottomVerifiedIcon,
 } from "./campaign-icons";
-import { imageSrc } from "../../sanity/lib/image";
+import { imageProps } from "../../sanity/lib/image";
 import type { Campaign as CampaignType } from "../../sanity/types";
 
 /** Renders text with any email addresses turned into mailto links. */
@@ -46,7 +46,7 @@ export function Campaign({ data }: { data: CampaignType | null }) {
     <section className="campaign" id="apply">
       <div className="padding-global decor">
         <div className="campaign_decor">
-          <img src="/images/sections/campaign/left-decor.webp" width={392} height={2379} alt="" />
+          <img src="/images/sections/campaign/left-decor.webp" width={392} height={2379} alt="" loading="lazy" decoding="async" />
         </div>
         <div className="container-large">
           <div className="campaign_wrapper-big">
@@ -65,8 +65,10 @@ export function Campaign({ data }: { data: CampaignType | null }) {
                     >
                       <p className="text-body-regular gray">[</p>
                       <img
-                        src={imageSrc(icon, `/images/sections/campaign/strapline-${i + 1}.svg`)}
+                        {...imageProps(icon, `/images/sections/campaign/strapline-${i + 1}.svg`, { width: 20 })}
                         alt=""
+                        loading="lazy"
+                        decoding="async"
                       />
                       <p className="text-body-regular gray"> {text} </p>
                       <p className="text-body-regular gray">]</p>
@@ -177,11 +179,14 @@ export function Campaign({ data }: { data: CampaignType | null }) {
                     <div className="campaign_form-bottom-left">
                       <div className="campaign_form-bottom-avatar">
                         <img
-                          src={imageSrc(
+                          {...imageProps(
                             data.formBottom?.avatar,
-                            "/images/sections/campaign/ava.webp"
+                            "/images/sections/campaign/ava.webp",
+                            { width: 44 }
                           )}
                           alt=""
+                          loading="lazy"
+                          decoding="async"
                         />
                       </div>
                       <div className="campaign_form-bottom-left-info">
@@ -205,22 +210,25 @@ export function Campaign({ data }: { data: CampaignType | null }) {
 
               <div className="campaign_image">
                 <img
-                  src={imageSrc(
+                  {...imageProps(
                     data.image,
-                    "/images/sections/campaign/Frame 2147261625.webp"
+                    "/images/sections/campaign/Frame 2147261625.webp",
+                    { width: 1080 }
                   )}
                   alt=""
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="campaign_image-mobile">
-                <img src="/images/sections/campaign/bot-1.webp" width={1953} height={163} alt="" />
+                <img src="/images/sections/campaign/bot-1.webp" width={1953} height={163} alt="" loading="lazy" decoding="async" />
               </div>
             </div>
 
           </div>
         </div>
         <div className="campaign_decor right">
-          <img src="/images/sections/campaign/right-decor.webp" width={392} height={2379} alt="" />
+          <img src="/images/sections/campaign/right-decor.webp" width={392} height={2379} alt="" loading="lazy" decoding="async" />
         </div>
       </div>
     </section>

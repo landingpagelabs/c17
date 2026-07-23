@@ -1,5 +1,5 @@
 import { StarsIcon, VerifiedBadgeIcon } from "../icons";
-import { imageSrc } from "../../sanity/lib/image";
+import { imageProps } from "../../sanity/lib/image";
 import type { Reviews as ReviewsType } from "../../sanity/types";
 
 export function Reviews({ data }: { data: ReviewsType | null }) {
@@ -25,12 +25,11 @@ export function Reviews({ data }: { data: ReviewsType | null }) {
                   <div className={isVideo ? "reviews_item modify" : "reviews_item"} key={i}>
                     {isVideo && item.videoUrl && (
                       <div className="reviews_video" data-video={item.videoUrl}>
-                        <img src={imageSrc(item.videoThumb, "")} alt="" />
+                        <img {...imageProps(item.videoThumb, "", { width: 341 })} alt="" loading="lazy" decoding="async" />
                         <img
                           className="hero-inner_list-item-lightbox-play"
                           src="/images/sections/hero/play.webp" width={141} height={141}
-                          alt=""
-                        />
+                          alt="" loading="lazy" decoding="async" />
                       </div>
                     )}
 
@@ -45,7 +44,7 @@ export function Reviews({ data }: { data: ReviewsType | null }) {
 
                     <div className="reviews_info">
                       <div className="reviews_avatar">
-                        <img src={imageSrc(item.avatar, "")} alt="" />
+                        <img {...imageProps(item.avatar, "", { width: 44 })} alt="" loading="lazy" decoding="async" />
                       </div>
                       <div className="reviews_info-content">
                         <p className="text-label-extra-small">{item.name}</p>
@@ -60,8 +59,10 @@ export function Reviews({ data }: { data: ReviewsType | null }) {
             <div className="reviews_cta">
               <div className="reviews_cta-image">
                 <img
-                  src={imageSrc(data.ctaImage, "/images/sections/reviews/img-cta.webp")}
+                  {...imageProps(data.ctaImage, "/images/sections/reviews/img-cta.webp", { width: 120 })}
                   alt=""
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
 

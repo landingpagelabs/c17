@@ -1,4 +1,4 @@
-import { imageSrc } from "../../sanity/lib/image";
+import { imageProps } from "../../sanity/lib/image";
 import type { PreCall as PreCallType } from "../../sanity/types";
 
 /** Pre-call has its own slim header and banner rather than the site header. */
@@ -24,7 +24,7 @@ export function PreCall({ data }: { data: PreCallType | null }) {
           <div className="container-large">
             <div className="header_wrapper call">
               <div className="header_logo call">
-                <img src={imageSrc(data.logo, "/images/header/Logo.webp")} alt="" />
+                <img {...imageProps(data.logo, "/images/header/Logo.webp", { width: 114 })} alt="" />
               </div>
             </div>
           </div>
@@ -85,7 +85,7 @@ export function PreCall({ data }: { data: PreCallType | null }) {
                   <div className="hero-congrats_steps-item-list">
                     {data.videos?.map((video, i) => (
                       <div className="hero-congrats_steps-item-video" key={i}>
-                        <img src={imageSrc(video, "")} alt="" />
+                        <img {...imageProps(video, "", { width: 340 })} alt="" loading="lazy" decoding="async" />
                       </div>
                     ))}
                   </div>
@@ -104,8 +104,10 @@ export function PreCall({ data }: { data: PreCallType | null }) {
               <div className="footer-banner_wrapper">
                 <div className="footer-banner_image">
                   <img
-                    src={imageSrc(data.footerImage, "/images/sections/call/image.webp")}
+                    {...imageProps(data.footerImage, "/images/sections/call/image.webp", { width: 44 })}
                     alt=""
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <p className="text-label-large white">{data.footerText}</p>

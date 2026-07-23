@@ -1,6 +1,6 @@
 import { CtaMain } from "../CtaMain";
 import { RichText } from "../RichText";
-import { imageSrc } from "../../sanity/lib/image";
+import { imageProps } from "../../sanity/lib/image";
 import type { Hero as HeroType, HeroCard } from "../../sanity/types";
 
 /**
@@ -25,7 +25,7 @@ function Card({
             : `hero-inner_list-image item-${slot}`
         }
       >
-        <img src={imageSrc(card.image, fallback)} alt="" />
+        <img {...imageProps(card.image, fallback, { width: 200 })} alt="" loading="lazy" decoding="async" />
       </div>
       <div className="hero-inner_list-text">
         <p className="text-label-triple-extra-small fw-600-black">{card.label}</p>
@@ -66,7 +66,7 @@ export function Hero({ data }: { data: HeroType | null }) {
           <div className="hero_wrapper">
             <div className="hero_logo">
               <img
-                src={imageSrc(data.logo, "/images/sections/hero/hero-logo.webp")}
+                {...imageProps(data.logo, "/images/sections/hero/hero-logo.webp", { width: 143 })}
                 alt=""
               />
             </div>
@@ -125,26 +125,31 @@ export function Hero({ data }: { data: HeroType | null }) {
                         data-video={center.videoUrl}
                       >
                         <img
-                          src={imageSrc(
+                          {...imageProps(
                             center.videoThumb,
-                            "/images/sections/hero/video.webp"
+                            "/images/sections/hero/video.webp",
+                            { width: 228 }
                           )}
                           alt=""
+                          loading="lazy"
+                          decoding="async"
                         />
                         <img
                           className="hero-inner_list-item-lightbox-play"
                           src="/images/sections/hero/play.webp" width={141} height={141}
-                          alt=""
-                        />
+                          alt="" loading="lazy" decoding="async" />
                       </div>
                     )}
                     <div className="hero-inner_list-image item-5">
                       <img
-                        src={imageSrc(
+                        {...imageProps(
                           center?.image,
-                          "/images/sections/hero/center.webp"
+                          "/images/sections/hero/center.webp",
+                          { width: 179 }
                         )}
                         alt=""
+                        loading="lazy"
+                        decoding="async"
                       />
                     </div>
                     <div className="hero-inner_list-text">

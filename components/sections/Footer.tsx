@@ -2,7 +2,7 @@ import { FOOTER_ASK_ICONS } from "./footer-icons";
 import { SOCIAL_ICONS } from "./social-icons";
 import { CtaMain } from "../CtaMain";
 import { RichText } from "../RichText";
-import { imageSrc } from "../../sanity/lib/image";
+import { imageProps } from "../../sanity/lib/image";
 import type { Footer as FooterType } from "../../sanity/types";
 
 /** Matches the CMS link label to its icon, e.g. "LinkedIn" -> LinkedInIcon. */
@@ -58,8 +58,10 @@ export function Footer({
                 <div className="footer-head-left_logo-image">
                   <img
                     className="footer-head-left_logo-img"
-                    src={imageSrc(data.logo, "/images/footer/C17_logo.webp")}
+                    {...imageProps(data.logo, "/images/footer/C17_logo.webp", { width: 164 })}
                     alt="C17 logo"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div className="footer-head-left_title-wrap">
@@ -143,8 +145,10 @@ export function Footer({
                   <a href={award.href || "#"} className="item_footer-content-right" key={i}>
                     <img
                       className="item-footer-content-right_img"
-                      src={imageSrc(award.image, `/images/footer/award_${i + 1}.webp`)}
+                      {...imageProps(award.image, `/images/footer/award_${i + 1}.webp`, { width: 100 })}
                       alt="award image"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </a>
                 ))}
@@ -156,16 +160,17 @@ export function Footer({
                 <div className="footer-bottom-left_image">
                   <img
                     className="footer-bottom-left_img"
-                    src={imageSrc(data.builtBy?.logo, "/images/footer/bottom_logo.webp")}
+                    {...imageProps(data.builtBy?.logo, "/images/footer/bottom_logo.webp", { width: 40 })}
                     alt="LPL logo"
+                    loading="lazy"
+                    decoding="async"
                   />
                   {/* The second logo is only in the home (wide) footer. */}
                   {!narrow && (
                     <img
                       className="footer-bottom-left_img-2"
                       src="/images/footer/bottom_logo-2.webp" width={78} height={78}
-                      alt="LPL logo"
-                    />
+                      alt="LPL logo" loading="lazy" decoding="async" />
                   )}
                 </div>
                 <a

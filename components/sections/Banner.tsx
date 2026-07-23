@@ -35,7 +35,7 @@ export function Banner({ data }: { data: BannerType | null }) {
     <section className="banner">
       <div className="padding-global decor tb-decor decor-padding">
         <div className="banner_decor">
-          <img src="/images/sections/banner/left-decor.webp" width={240} height={582} alt="" />
+          <img src="/images/sections/banner/left-decor.webp" width={240} height={582} alt="" loading="lazy" decoding="async" />
         </div>
         <div className="container-large">
           <div className="banner_wrapper">
@@ -59,7 +59,7 @@ export function Banner({ data }: { data: BannerType | null }) {
           </div>
         </div>
         <div className="banner_decor right">
-          <img src="/images/sections/banner/right-decor.webp" width={240} height={582} alt="" />
+          <img src="/images/sections/banner/right-decor.webp" width={240} height={582} alt="" loading="lazy" decoding="async" />
         </div>
       </div>
     </section>

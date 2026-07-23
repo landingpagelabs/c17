@@ -1,4 +1,4 @@
-import { imageSrc } from "../../sanity/lib/image";
+import { imageProps } from "../../sanity/lib/image";
 import type { Results as ResultsType } from "../../sanity/types";
 
 export function Results({ data }: { data: ResultsType | null }) {
@@ -16,12 +16,12 @@ export function Results({ data }: { data: ResultsType | null }) {
               {data.items?.map((item, i) => {
                 const first = (
                   <div className="results_image" key="a">
-                    <img src={imageSrc(item.image, "")} alt="" />
+                    <img {...imageProps(item.image, "", { width: 660 })} alt="" loading="lazy" decoding="async" />
                   </div>
                 );
                 const second = (
                   <div className="results_image-2" key="b">
-                    <img src={imageSrc(item.image2, "")} alt="" />
+                    <img {...imageProps(item.image2, "", { width: 660 })} alt="" loading="lazy" decoding="async" />
                   </div>
                 );
                 return (

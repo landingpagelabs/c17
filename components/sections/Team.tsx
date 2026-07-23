@@ -1,5 +1,5 @@
 import { CtaMain } from "../CtaMain";
-import { imageSrc } from "../../sanity/lib/image";
+import { imageProps } from "../../sanity/lib/image";
 import type { Team as TeamType } from "../../sanity/types";
 
 export function Team({ data }: { data: TeamType | null }) {
@@ -9,8 +9,10 @@ export function Team({ data }: { data: TeamType | null }) {
     <section className="team">
       <div className="team_image-top">
         <img
-          src={imageSrc(data.topImage, "/images/sections/team/team-top-image.webp")}
+          {...imageProps(data.topImage, "/images/sections/team/team-top-image.webp", { width: 1080 })}
           alt=""
+          loading="lazy"
+          decoding="async"
         />
       </div>
       <div className="padding-global decor tb-decor">
@@ -29,7 +31,12 @@ export function Team({ data }: { data: TeamType | null }) {
             </div>
 
             <div className="team_image">
-              <img src={imageSrc(data.image, "/images/sections/team/team.webp")} alt="" />
+              <img
+                {...imageProps(data.image, "/images/sections/team/team.webp", { width: 1080 })}
+                alt=""
+                loading="lazy"
+                decoding="async"
+              />
             </div>
 
             <CtaMain cta={data.cta} />

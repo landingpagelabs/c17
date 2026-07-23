@@ -1,6 +1,6 @@
 import { ActionIcon, CopyIcon } from "./congrats-icons";
 import { RichText } from "../RichText";
-import { imageSrc } from "../../sanity/lib/image";
+import { imageProps } from "../../sanity/lib/image";
 import type { CongratsStep, HeroCongrats as HeroCongratsType } from "../../sanity/types";
 
 /**
@@ -12,12 +12,11 @@ function StepBody({ step }: { step: CongratsStep }) {
   if (step.kind === "video") {
     return (
       <div className="hero-congrats_steps-video" data-video={step.videoUrl || ""}>
-        <img src={imageSrc(step.videoThumb, "")} alt="" />
+        <img {...imageProps(step.videoThumb, "", { width: 674 })} alt="" />
         <img
           className="hero-congrats_steps-video-play"
           src="/images/sections/congrats/play.webp" width={260} height={260}
-          alt=""
-        />
+          alt="" loading="lazy" decoding="async" />
       </div>
     );
   }
@@ -32,10 +31,10 @@ function StepBody({ step }: { step: CongratsStep }) {
           <p className="text-body-regular secondary-text">{step.text}</p>
         </div>
         <div className="hero-congrats_steps-image">
-          <img src={imageSrc(step.image, "")} alt="" />
+          <img {...imageProps(step.image, "", { width: 440 })} alt="" loading="lazy" decoding="async" />
         </div>
         <div className="hero-congrats_steps-image-mobile">
-          <img src="/images/sections/congrats/item-mible.webp" width={879} height={455} alt="" />
+          <img src="/images/sections/congrats/item-mible.webp" width={879} height={455} alt="" loading="lazy" decoding="async" />
         </div>
         <div className="hero-congrats_steps-action">
           <ActionIcon />
@@ -76,12 +75,11 @@ function StepBody({ step }: { step: CongratsStep }) {
             key={i}
           >
             {/* Прев'ю задано локальним файлом (перекриває CMS video.thumb). */}
-            <img src="/images/sections/congrats/faq-video.webp" width={674} height={1020} alt="" />
+            <img src="/images/sections/congrats/faq-video.webp" width={674} height={1020} alt="" loading="lazy" decoding="async" />
             <img
               className="hero-congrats_steps-video-play"
               src="/images/sections/congrats/play.webp" width={260} height={260}
-              alt=""
-            />
+              alt="" loading="lazy" decoding="async" />
           </div>
         ))}
       </div>
