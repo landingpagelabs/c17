@@ -19,6 +19,13 @@ const FOOTER_LINK_ROUTES: Record<string, string> = {
   "privacy policy": "/private-policy",
   "terms of service": "/terms-of-service",
 };
+/** External links open in a new tab; internal/anchor/mailto/tel stay put. */
+function externalProps(href: string) {
+  return /^https?:\/\//.test(href)
+    ? { target: "_blank" as const, rel: "noopener" }
+    : {};
+}
+
 function footerHref(link: { href?: string; label?: string; noHover?: boolean }): string {
   const href = link.href;
   if (href && href !== "#") return href;
@@ -86,32 +93,46 @@ export function Footer({
                       <p className="label-large is-semibold">{column.title}</p>
                     </div>
                     <div className="footer-head-right-list_links-wrap">
-                      {column.links?.map((link, j) =>
-                        column.isSocial ? (
-                          <a href={footerHref(link)} className="footer_social-wrap" key={j}>
-                            <div className="footer_social">
-                              <SocialIcon label={link.label} />
-                            </div>
-                            <div className="item_footer-head-right">
+                      {column.links?.map((link, j) => {
+                        if (column.isSocial) {
+                          return (
+                            <a
+                              href={footerHref(link)}
+                              className="footer_social-wrap"
+                              key={j}
+                              {...externalProps(footerHref(link))}
+                            >
+                              <div className="footer_social">
+                                <SocialIcon label={link.label} />
+                              </div>
+                              <div className="item_footer-head-right">
+                                <p className="text-body-regular">{link.label}</p>
+                              </div>
+                            </a>
+                          );
+                        }
+                        // Plain-text rows (e.g. the street address) are not
+                        // links at all — no href, no hover, no cursor.
+                        if (link.noHover) {
+                          return (
+                            <div className="item_footer-head-right no-hover" key={j}>
                               <p className="text-body-regular">{link.label}</p>
                             </div>
-                          </a>
-                        ) : (
+                          );
+                        }
+                        return (
                           <a
                             href={footerHref(link)}
-                            className={
-                              link.noHover
-                                ? "item_footer-head-right no-hover"
-                                : "item_footer-head-right"
-                            }
+                            className="item_footer-head-right"
                             // A video link opens the shared modal (see all.js).
                             data-video={link.videoUrl || undefined}
                             key={j}
+                            {...externalProps(footerHref(link))}
                           >
                             <p className="text-body-regular">{link.label}</p>
                           </a>
-                        )
-                      )}
+                        );
+                      })}
                     </div>
                   </div>
                 ))}
@@ -141,8 +162,10 @@ export function Footer({
               </div>
 
               <div className="footer-content_right">
-                {data.awards?.map((award, i) => (
-                  <a href={award.href || "#"} className="item_footer-content-right" key={i}>
+                {/* Certification badges are not links (and get no hover)
+                    unless the CMS provides a real destination. */}
+                {data.awards?.map((award, i) => {
+                  const img = (
                     <img
                       className="item-footer-content-right_img"
                       {...imageProps(award.image, `/images/footer/award_${i + 1}.webp`, { width: 100 })}
@@ -150,8 +173,22 @@ export function Footer({
                       loading="lazy"
                       decoding="async"
                     />
-                  </a>
-                ))}
+                  );
+                  return award.href && award.href !== "#" ? (
+                    <a
+                      href={award.href}
+                      className="item_footer-content-right"
+                      key={i}
+                      {...externalProps(award.href)}
+                    >
+                      {img}
+                    </a>
+                  ) : (
+                    <div className="item_footer-content-right" key={i}>
+                      {img}
+                    </div>
+                  );
+                })}
               </div>
             </div>
 

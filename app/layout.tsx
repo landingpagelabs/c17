@@ -1,13 +1,17 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 
 import "../styles/main.css";
 
+const GTM_ID = "GTM-KLBG4X5C";
+
 export const metadata: Metadata = {
-  title: "C17 — AI Sales As A Service",
+  title: "C17 | AI Sales As A Service",
   description:
     "We build the outbound system, get replies from hard-to-reach buyers, book meetings with our SDRs and then install it in-house.",
   // TabAttention swaps this href while the tab is backgrounded.
   icons: { icon: "/images/header/favicon-default.png" },
+  verification: { google: "V333n3ud0teknMuHjwtOSlUZHJP2VWRqmZttZjxYt4U" },
 };
 
 export default function RootLayout({
@@ -24,7 +28,38 @@ export default function RootLayout({
         <link rel="preload" href="/fonts/PPMori-Medium.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <link rel="preload" href="/fonts/PPMori-SemiBold.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
       </head>
-      <body>{children}</body>
+      <body>
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
+        {children}
+        {/* Google Tag Manager — afterInteractive: tracks early, never blocks paint. */}
+        <Script id="gtm" strategy="afterInteractive">
+          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','${GTM_ID}');`}
+        </Script>
+        {/* iClosed Lift widget (floating CTA) — idle-loaded, not LCP-relevant. */}
+        <Script
+          src="https://app.iclosed.io/assets/widget.js"
+          data-cta-widget="7I5cbkRlvfV9"
+          strategy="lazyOnload"
+        />
+        {/* CantClone design protection — idle-loaded. */}
+        <Script
+          src="https://cdn.cantclone.com/cantclone.js"
+          data-key="79529ca0889e4fe999fc25027293b992"
+          strategy="lazyOnload"
+        />
+      </body>
     </html>
   );
 }
