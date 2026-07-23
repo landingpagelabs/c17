@@ -1,0 +1,161 @@
+/* ============================ TERMS / POLICY ============================ */
+.hero-terms {
+    padding: 0px 45px;
+}
+
+.hero-terms_wrapper {
+    padding: 135px 0px 40px 0px;
+}
+
+.hero-terms_strapline {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.hero-terms_title-wrap {
+    width: 100%;
+    max-width: 714px;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.terms-content {
+    padding: 0px 45px;
+    border-top: 1px solid #EDEDED;
+}
+
+.terms-content_wrapper {
+    width: 100%;
+    max-width: 714px;
+    margin: 0 auto;
+    padding: 50px 0px 60px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.terms-content_item {
+    display: flex;
+    flex-direction: column;
+}
+
+.terms-content_title-wrap {
+    margin-bottom: 25px;
+}
+
+/* Селектор по нащадку, бо .text-label-large на самому <h2> перебиває
+   успадкований font-weight від врапа */
+.terms-content_title-wrap * {
+    font-weight: 600;
+}
+
+/* Відступи між абзацами/списками — margin, а не gap, щоб 25px у
+   .terms-content_title-wrap не додавалися до відстані контейнера */
+.terms-content_item p,
+.terms-content_list {
+    margin-bottom: 14px;
+}
+
+.terms-content_item> :last-child {
+    margin-bottom: 0;
+}
+
+/* Номер підпункту (2.1, 5.10) і термін у визначеннях — ширший відступ
+   від тексту, ніж дає звичайний пробіл */
+.terms-content_num {
+    margin-right: 5px;
+}
+
+.terms-content_list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-left: 22px;
+}
+
+/* Маркери списку — reset прибирає list-style, тому малюємо власні */
+.terms-content_list li {
+    position: relative;
+}
+
+.terms-content_list li::before {
+    content: "";
+    position: absolute;
+    left: -14px;
+    top: 0.6em;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #2A2A2A;
+}
+
+/* Таблиці (MSA) — на вузьких екранах скроляться всередині себе,
+   щоб сторінка не їхала горизонтально */
+.terms-content_table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 14px;
+    border-radius: 10px;
+    border: 1px solid #EDEDED;
+}
+
+.terms-content_table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.terms-content_table th,
+.terms-content_table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid #EDEDED;
+    border-right: 1px solid #EDEDED;
+    vertical-align: top;
+    min-width: 130px;
+}
+
+.terms-content_table th:last-child,
+.terms-content_table td:last-child {
+    border-right: none;
+}
+
+.terms-content_table tr:last-child td {
+    border-bottom: none;
+}
+
+.terms-content_table th {
+    font-weight: 600;
+    background: #F9F9F9;
+    white-space: nowrap;
+}
+
+/* Блок підписів (Pilot SOW) — дві рівні колонки: C17 Lab / Client */
+.terms-content_sign {
+    display: flex;
+    gap: 30px;
+}
+
+.terms-content_sign-col {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.terms-content_sign-col p {
+    margin-bottom: 14px;
+}
+
+.terms-content_sign-col> :last-child {
+    margin-bottom: 0;
+}
+
+.terms-content_link {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color 0.2s ease;
+}
+
+.terms-content_link:hover {
+    color: #5900FF;
+}

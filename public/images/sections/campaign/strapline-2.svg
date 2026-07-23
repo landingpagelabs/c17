@@ -1,0 +1,51 @@
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g filter="url(#filter0_ii_5527_8903)">
+                        <rect width="20" height="20" rx="10" fill="#E7DAFF" />
+                        <rect x="0.3125" y="0.3125" width="19.375" height="19.375" rx="9.6875"
+                          stroke="url(#paint0_linear_5527_8903)" stroke-width="0.625" />
+                        <rect x="3.125" y="3.125" width="13.75" height="13.75" rx="6.875"
+                          fill="url(#paint1_linear_5527_8903)" />
+                        <path
+                          d="M11.25 14.4788H8.75C6.40833 14.4788 5.9375 13.3747 5.9375 11.5913V9.02051C5.9375 7.04551 6.60417 6.24134 8.31667 6.14551H11.6667C11.6708 6.14551 11.6792 6.14551 11.6833 6.14551C13.3958 6.24134 14.0625 7.04551 14.0625 9.02051V11.5913C14.0625 13.3747 13.5917 14.4788 11.25 14.4788ZM8.33333 6.77051C7.16667 6.83717 6.5625 7.20384 6.5625 9.02051V11.5913C6.5625 13.1872 6.86667 13.8538 8.75 13.8538H11.25C13.1333 13.8538 13.4375 13.1872 13.4375 11.5913V9.02051C13.4375 7.20801 12.8375 6.83717 11.6583 6.77051H8.33333Z"
+                          fill="#825DC7" />
+                        <path
+                          d="M13.6462 12.6455H6.35449C6.18366 12.6455 6.04199 12.5038 6.04199 12.333C6.04199 12.1622 6.18366 12.0205 6.35449 12.0205H13.6462C13.817 12.0205 13.9587 12.1622 13.9587 12.333C13.9587 12.5038 13.817 12.6455 13.6462 12.6455Z"
+                          fill="#825DC7" />
+                        <path
+                          d="M9.99967 8.4375C9.48717 8.4375 9.05384 8.71667 9.05384 9.25833C9.05384 9.51667 9.17467 9.7125 9.35801 9.8375C9.10384 9.9875 8.95801 10.2292 8.95801 10.5125C8.95801 11.0292 9.35384 11.35 9.99967 11.35C10.6413 11.35 11.0413 11.0292 11.0413 10.5125C11.0413 10.2292 10.8955 9.98333 10.6372 9.8375C10.8247 9.70833 10.9413 9.51667 10.9413 9.25833C10.9413 8.71667 10.5122 8.4375 9.99967 8.4375ZM9.99967 9.62083C9.78301 9.62083 9.62467 9.49167 9.62467 9.2875C9.62467 9.07917 9.78301 8.95833 9.99967 8.95833C10.2163 8.95833 10.3747 9.07917 10.3747 9.2875C10.3747 9.49167 10.2163 9.62083 9.99967 9.62083ZM9.99967 10.8333C9.72467 10.8333 9.52467 10.6958 9.52467 10.4458C9.52467 10.1958 9.72467 10.0625 9.99967 10.0625C10.2747 10.0625 10.4747 10.2 10.4747 10.4458C10.4747 10.6958 10.2747 10.8333 9.99967 10.8333Z"
+                          fill="#825DC7" />
+                      </g>
+                      <defs>
+                        <filter id="filter0_ii_5527_8903" x="0" y="-0.625" width="20" height="21.25"
+                          filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                          <feColorMatrix in="SourceAlpha" type="matrix"
+                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                          <feOffset dy="1.25" />
+                          <feGaussianBlur stdDeviation="0.3125" />
+                          <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+                          <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0" />
+                          <feBlend mode="normal" in2="shape" result="effect1_innerShadow_5527_8903" />
+                          <feColorMatrix in="SourceAlpha" type="matrix"
+                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                          <feOffset dy="-1.25" />
+                          <feGaussianBlur stdDeviation="0.3125" />
+                          <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+                          <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0" />
+                          <feBlend mode="normal" in2="effect1_innerShadow_5527_8903"
+                            result="effect2_innerShadow_5527_8903" />
+                        </filter>
+                        <linearGradient id="paint0_linear_5527_8903" x1="10" y1="0" x2="10" y2="20"
+                          gradientUnits="userSpaceOnUse">
+                          <stop stop-color="#825DC7" stop-opacity="0.2" />
+                          <stop offset="0.5" stop-color="#825DC7" />
+                          <stop offset="1" stop-color="#825DC7" stop-opacity="0.2" />
+                        </linearGradient>
+                        <linearGradient id="paint1_linear_5527_8903" x1="10" y1="3.125" x2="10" y2="16.875"
+                          gradientUnits="userSpaceOnUse">
+                          <stop stop-color="#D4BDFF" />
+                          <stop offset="1" stop-color="#E1D2FF" />
+                        </linearGradient>
+                      </defs>
+                    </svg>

@@ -1,0 +1,310 @@
+.campaign {
+    padding: 0px 45px;
+    display: flex;
+    justify-content: center;
+    /* Відступ під фіксований хедер (~80px) при переході по якорю #apply */
+    scroll-margin-top: 100px;
+}
+
+/* Ця секція — єдина з display:flex, тож .padding-global тут стає flex-елементом
+   і стискається під контент. Без цього вертикальні лінії .decor стоять вужче,
+   ніж у решти секцій, де .padding-global — звичайний блок на всю ширину. */
+.campaign .padding-global.decor {
+    width: 100%;
+    border-top: 1px solid #EDEDED;
+}
+
+.campaign_decor {
+    width: 100%;
+    max-width: 138px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.campaign_decor.right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: auto;
+}
+
+.campaign_wrapper {
+    padding: 45px 0px;
+}
+
+.campaign_strapline {
+    margin-bottom: 15px;
+}
+
+.campaign_strapline {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 24px;
+    /* щоб контейнер не "стрибав" по висоті */
+}
+
+.campaign_strapline-item {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    justify-content: center;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(3px);
+    transition: opacity .5s ease, transform .5s ease;
+    pointer-events: none;
+}
+
+.campaign_image-mobile {
+    display: none;
+}
+
+
+/* Крос-фейд: активний айтем проявляється, а попередній згасає на тому ж місці —
+   виглядає, ніби текст змінюється, а не з'являється новий блок. */
+.campaign_strapline-item.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.campaign_title-wrap {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.campaign_text-wrap {
+    width: 100%;
+    max-width: 653px;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+
+
+.campaign_form-wrap {
+    width: 100%;
+    max-width: 711px;
+    margin: 0 auto;
+}
+
+.campaign_form-progress {
+    width: 100%;
+    position: relative;
+    height: 3px;
+    background-color: #F4F4F4;
+    z-index: 5;
+}
+
+.campaign_form-progress-thumb {
+    position: absolute;
+    width: 16.6667%;
+    height: 3px;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg, #5855FF 0%, #8B3DFF 100%);
+    transition: width .35s ease;
+}
+
+.campaign_step-finish-title {
+    width: 100%;
+    max-width: 452px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+/* Показуємо лише активний крок */
+.campaign_step {
+    display: none;
+}
+
+.campaign_step.active {
+    display: block;
+}
+
+.campaign_step {
+    position: relative;
+    z-index: 5;
+    padding: 36px;
+    background-color: #FFF;
+    border-radius: 0 0 18px 18px;
+    background: #FFF;
+    box-shadow: 0 0 0 1px rgba(51, 51, 51, 0.12), 0 1px 1px -0.5px rgba(51, 51, 51, 0.05), 0 3px 3px -1.5px rgba(51, 51, 51, 0.05), 0 6px 6px -3px rgba(51, 51, 51, 0.05), 0 12px 12px -6px rgba(51, 51, 51, 0.05), 0 24px 24px -12px rgba(51, 51, 51, 0.05), 0 120px 120px -80px rgba(161, 161, 170, 0.04);
+}
+
+.campaign_form-bottom {
+    position: relative;
+    z-index: 4;
+    margin-top: -90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    align-items: center;
+    min-height: 138px;
+    background-color: #F6F6F6;
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+    padding: 98px 0px 12px 28px;
+
+}
+
+.campaign_step-finish-text-top {
+    width: 100%;
+    max-width: 426px;
+    margin: 0 auto;
+    margin-bottom: 22px;
+    text-align: center;
+}
+
+.campaign_step-finish-text-no {
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.campaign_form-bottom-left {
+    display: flex;
+    gap: 12px;
+}
+
+.campaign_form-bottom-avatar {
+    width: 100%;
+    max-width: 44px;
+}
+
+.campaign_form-bottom-left-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.flex {
+    display: flex;
+    gap: 5px;
+}
+
+.campaign_radio {
+    width: 100%;
+    max-width: 638px;
+    display: flex;
+    gap: 10px;
+    margin-top: 28px;
+}
+
+.campaign_radio-input {
+    width: calc(100% / 2 - 5px);
+    border-radius: 100px;
+    border: 0.7px solid #E2E1DE;
+    background: #FFF;
+    transition: all .4s ease 0s;
+    box-shadow: 0 0 0 2.5px #F9F9F8 inset, 0 1px 2px 0 rgba(0, 0, 0, 0.08), 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+}
+
+.campaign_radio-input.purple {
+    background-color: #5900FF;
+    color: #FFF;
+    border: none;
+    box-shadow: none;
+}
+
+.campaign_form-top {
+    display: flex;
+    padding: 0px 12px;
+    align-items: center;
+    border-radius: 14px 14px 0 0;
+    border-top: 1px solid #E6E6E6;
+    border-right: 1px solid #E6E6E6;
+    border-left: 1px solid #E6E6E6;
+    background: #F9F9F9;
+    min-height: 36px;
+}
+
+.campaign_radio-input:hover {
+    opacity: 0.6;
+
+}
+
+
+
+.campaign_radio-input input {
+    display: none;
+}
+
+/* Лейбл заповнює всю кнопку, щоб клік працював по всій площі */
+.campaign_radio-input label {
+    width: 100%;
+    min-height: 53px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.campaign_step-title-wrap {
+    text-align: center;
+}
+
+.cta-blue {
+    width: max-content;
+    justify-content: center;
+    border-radius: 12px;
+    gap: 10px;
+    margin: 0 auto;
+    color: #FFF;
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0A66C2;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.06);
+    padding: 0px 24px 0px 18px;
+}
+
+.campaign_div {
+    width: 100%;
+    height: 1px;
+    background-color: #CCCCCC;
+    margin-top: 22px;
+    margin-bottom: 22px;
+}
+
+
+.campaign_step-finish-title-no {
+    text-align: center;
+    margin-bottom: 14px;
+}
+
+.campaign_form-bottom-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.campaign_form-bottom-right-text {
+    width: 100%;
+    max-width: 198px;
+    align-items: center;
+}
+
+.campaign_text-bot {
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.campaign_text-bot-2 {
+    text-align: center;
+}
+
+.campaign_mail-link {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.campaign_step-finish-text-no {}

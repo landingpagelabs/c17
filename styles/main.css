@@ -1,0 +1,29 @@
+/* Тільки @import. Жодного власного CSS у цьому файлі. */
+
+/* base */
+@import url("./base/reset.css");
+@import url("./base/fonts.css");
+@import url("./base/global.css");
+
+/* layout */
+@import url("./layout/header.css");
+@import url("./layout/footer.css");
+
+/* sections */
+@import url("./sections/hero.css");
+@import url("./sections/how-it-works.css");
+@import url("./sections/banner.css");
+@import url("./sections/services.css");
+@import url("./sections/compare.css");
+@import url("./sections/team.css");
+@import url("./sections/reviews.css");
+@import url("./sections/campaign.css");
+@import url("./sections/carousel.css");
+@import url("./sections/quote.css");
+@import url("./sections/faq.css");
+@import url("./sections/congrats.css");
+@import url("./sections/pre-call.css");
+@import url("./sections/terms.css");
+
+/* адаптив — має бути останнім */
+@import url("./responsive.css");

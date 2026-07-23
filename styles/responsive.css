@@ -1,0 +1,708 @@
+/* ====================================================================
+   АДАПТИВ — один брейкпоінт ≤991px
+   Підключається ОСТАННІМ, щоб перекривати базові правила секцій.
+   • title-h*  -4px
+   • body      -2px
+   • label     -2px
+   • враппери  → padding: 25px 0
+   • бокові паддінги секцій прибрано (гутер дає .padding-global = 20px)
+   ==================================================================== */
+@media (max-width: 991px) {
+
+  /* -------------------------- Типографіка -------------------------- */
+  /* Headings -4px */
+  .title-h1 {
+    font-size: 34px;
+  }
+
+  .title-h2 {
+    font-size: 30px;
+  }
+
+  .title-h3 {
+    font-size: 28px;
+  }
+
+  .title-h4 {
+    font-size: 24px;
+  }
+
+  .title-h5 {
+    font-size: 20px;
+  }
+
+  /* Body -2px */
+  .text-body-large {
+    font-size: 16px;
+  }
+
+  .text-body-regular {
+    font-size: 14px;
+  }
+
+  .text-body-small {
+    font-size: 12px;
+  }
+
+  .text-caption {
+    font-size: 10px;
+  }
+
+  /* Labels -2px */
+  .text-label-x-large {
+    font-size: 18px;
+  }
+
+  .text-label-large {
+    font-size: 16px;
+  }
+
+  .text-label-medium {
+    font-size: 14px;
+  }
+
+  .text-label-small {
+    font-size: 13px;
+  }
+
+  .text-label-extra-small {
+    font-size: 12px;
+  }
+
+  .text-label-double-extra-small {
+    font-size: 10px;
+  }
+
+  .text-label-triple-extra-small {
+    font-size: 8px;
+  }
+
+  .text-label-mini-large {
+    font-size: 14px;
+  }
+
+  /* -------------------------- Враппери → 25px 0 -------------------- */
+  .how-it-works_wrapper,
+  .banner_wrapper,
+  .services_wrapper,
+  .compare_wrapper,
+  .team_wrapper,
+  .reviews_wrappper,
+  .campaign_wrapper,
+  .carousel_wrapper,
+  .faq_wrapper,
+  .footer_wrapper {
+    padding: 25px 0px;
+  }
+
+  /* Hero — окремо: зверху лишаємо запас під фіксований хедер (80px) */
+  .hero_wrapper {
+    padding: 120px 0px 25px 0px;
+  }
+
+  /* -------------------------- Бокові паддінги секцій --------------- */
+  /* Прибираємо зовнішні 45px — горизонтальний відступ дає .padding-global */
+  .hero,
+  .how-it-works,
+  .banner,
+  .services,
+  .compare,
+  .team,
+  .reviews,
+  .campaign,
+  .carousel,
+  .faq,
+  .hero-congrats,
+  .hero-call,
+  .hero-terms,
+  .terms-content,
+  .results,
+  .banner-info {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Hero сторінок terms/policy — запас під фіксований хедер */
+  .hero-terms_wrapper {
+    padding: 110px 0px 30px 0px;
+  }
+
+  .terms-content_wrapper {
+    padding: 30px 0px 40px 0px;
+    gap: 24px;
+  }
+
+  /* Підписи — дві колонки не влазять по ширині, ставимо в стовпчик */
+  .terms-content_sign {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+
+  /* -------------------------- Дрібні поправки ---------------------- */
+  /* Картка кроку форми — менше внутрішнього паддінгу на вузьких екранах */
+  .campaign_step {
+    padding: 24px 20px;
+  }
+
+  .header_wrapper {
+    min-height: 60px;
+  }
+
+  .hero_wrapper {
+    padding: 80px 0px 40px 0px;
+  }
+
+  .hero_logo {
+    max-width: 100px;
+  }
+
+  .hero_text-wrap {
+    margin-bottom: 20px;
+  }
+
+  .hero_decor {
+    margin: 20px 0px;
+  }
+
+  .hero-inner_list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-inner_list-item {
+    width: calc(100% / 2 - 5px);
+
+  }
+
+  .hero-inner_list-item.center {
+    width: 100%;
+  }
+
+  .hero-inner_list-center {
+    max-width: 100%;
+  }
+
+  .hero-inner_list-item.center {
+    max-width: 100%;
+  }
+
+  .hero_vector {
+    width: 100%;
+    height: auto;
+    bottom: 40px;
+  }
+
+  .hero_vector-desktop {
+    display: none;
+  }
+
+  .hero_vector-mobile {
+    display: block;
+  }
+
+  .quote_submit {
+    font-size: 16px;
+  }
+
+  /* -------------------------- How it works (анімація) -------------- */
+  /* Квадрат-годинник лишаємо, але стискаємо контент кроку під вузький екран */
+  .hiw_step {
+    padding: 0 6px;
+  }
+
+  .hiw_step-day {
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+
+  .hiw_step-title {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  .hiw_step-text {
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+
+  /* Картки — не ширші за екран */
+  .hiw_card {
+    margin-bottom: 16px;
+  }
+
+  .hiw_card--browser,
+  .hiw_card--panel {
+    width: 100%;
+    max-width: 290px;
+  }
+
+  .hiw_card--handoff {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .hiw_row {
+    min-height: 38px;
+    padding: 9px;
+  }
+
+  /* Компактніший "handoff", щоб влазив по ширині */
+  .hiw_handoff-flow {
+    gap: 8px;
+  }
+
+  .hiw_handoff-line {
+    width: 16px;
+  }
+
+  .hiw_handoff-logo {
+    width: 54px;
+    height: 54px;
+  }
+
+  .hiw_handoff-check {
+    width: 42px;
+    height: 42px;
+  }
+
+  .hiw_handoff-team {
+    width: 60px;
+    height: 60px;
+  }
+
+  .hiw_fraction-note {
+    font-size: 11px;
+  }
+
+  .cta-strapline svg {
+    display: none;
+  }
+
+  .cta-strapline {
+    gap: 10px;
+  }
+
+  .cta-block {
+    margin-top: 40px;
+  }
+
+  .banner_list {
+    flex-direction: column;
+  }
+
+  .banner_item {
+    max-width: 100%;
+    border-top: none;
+    min-height: 140px;
+  }
+
+  .banner_decor {
+    display: none;
+  }
+
+  /* Декор прихований на мобілі — не тримаємо під нього 80px,
+     повертаємо стандартний бічний відступ секції (20px від .padding-global) */
+  .decor-padding {
+    padding-inline: 20px;
+  }
+
+  .banner_item-title {
+    font-size: 24px;
+  }
+
+  .banner_item-text {
+    font-size: 20px;
+  }
+
+  .compare_table-wrap {
+    margin-bottom: 20px !important;
+  }
+
+  .quote {
+    padding: 0px;
+  }
+
+  .reviews_cta {
+    top: -20px;
+  }
+
+  .campaign_form-bottom-left {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .campaign_image {
+    display: none;
+  }
+
+  .campaign_image-mobile {
+    display: block;
+    margin-top: 30px;
+  }
+
+  .faq_bottom {
+    display: none;
+  }
+
+  .faq_bottom-mobile {
+    display: block;
+  }
+
+  .footer-head_left {
+    margin: 0 auto;
+    margin-bottom: 50px;
+  }
+
+  .footer_bottom {
+    padding-top: 20px;
+  }
+
+  .compare_strapline-center-wrap-2 {
+    display: none;
+  }
+
+  /* -------------------------- Compare (таблиця) -------------------- */
+  /* Фіксована ширина ~700px + горизонтальний скрол: колонки не
+     стискаються, тож .compare_decor завжди збігається з колонкою C17. */
+  .compare_table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    /* інерційний скрол на iOS */
+    /* ховаємо нативний скрол — показуємо власний (видно й на iPhone) */
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE/Edge */
+  }
+
+  .compare_table-wrap::-webkit-scrollbar {
+    display: none;
+    /* Chrome/Safari/iOS */
+    width: 0;
+    height: 0;
+  }
+
+  /* Таблиця й нижній банер — фіксована ширина, не стискаються */
+  .compare_table,
+  .compare_table-bottom {
+    width: 700px;
+    max-width: none;
+  }
+
+  .compare_table-bottom {
+    justify-content: flex-start;
+    /* Місце під картинку зліва (position:absolute, ~107px), щоб текст не залазив */
+    padding-left: 120px;
+  }
+
+  .compare_table-bottom-text {
+    max-width: 268px;
+  }
+
+  /* Колонки — фіксовані, щоб декор точно збігався */
+  .compare_table-col {
+    flex: 0 0 160px;
+    width: 160px;
+    max-width: 160px;
+  }
+
+  .compare_table-col.first {
+    flex: 0 0 170px;
+    width: 170px;
+    max-width: 170px;
+    /* Липка колонка лейблів — не скролиться, решта проходить за нею */
+    position: sticky;
+    left: 0;
+    z-index: 3;
+    background: #fff;
+    transition: box-shadow .2s ease;
+  }
+
+  /* Тінь на правій грані липкої колонки — з'являється, коли таблицю
+     зсунуто вправо (клас is-scrolled ставить JS у all.js) */
+  .compare_table-wrap.is-scrolled .compare_table-col.first {
+    box-shadow: 8px 0 12px -4px rgba(0, 0, 0, 0.12);
+  }
+
+  /* Порожній верхній-лівий кут — робимо непрозорим, щоб під час скролу
+     колонки не просвічували крізь нього */
+  .compare_table-col.first.opacity {
+    opacity: 1;
+    background: #fff;
+    border-top: none;
+  }
+
+  /* Пурпуровий фон колонки C17: 9(pad) + 170(first) + 10(gap) = 189 */
+  .compare_decor {
+    left: 189px;
+    max-width: 160px;
+  }
+
+  .compare_scrollbar {
+    margin-bottom: 30px;
+  }
+
+  .services_item {
+    max-width: 100%;
+  }
+
+  .services_image {
+    max-width: 100%;
+  }
+
+  .services_image.big {
+    max-width: 100%;
+  }
+
+  .header_menu-item-link.text-body-regular {
+    text-align: center;
+  }
+
+  .compare_text-wrap {
+    text-align: center;
+  }
+
+  .hero_strapline .text-body-regular.gray {
+    text-align: center;
+  }
+
+  /* -------------------------- Carousel dock ------------------------ */
+  /* Зменшуємо панель брендів, щоб влазила по ширині */
+  .carousel_dock-list {
+    gap: 5px;
+    padding: 6px 8px;
+  }
+
+  .carousel_dock-item {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+  }
+
+  .carousel_dock-item img {
+    max-width: 20px;
+    max-height: 18px;
+  }
+
+  .carousel_dock-item.is-active {
+    transform: translateY(-12px) scale(1.12);
+  }
+
+  .reviews_item {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* "250+ Companies Trust C17" + роздільник — ховаємо в кнопці на мобілі */
+  .reviews_cta .text-body-regular.light-gray,
+  .reviews_cta>svg {
+    display: none;
+  }
+
+  .campaign_form-bottom {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .campaign_form-bottom svg {
+    display: none;
+  }
+
+  .campaign_form-bottom {
+    padding: 110px 0px 10px 0px;
+    gap: 10px;
+  }
+
+  .campaign_form-bottom-left {
+    align-items: center;
+  }
+
+  .campaign_form-bottom-right-text {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .campaign_image {
+    margin-top: 20px;
+  }
+
+  .footer_head {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* 4 списки → сітка 2×2 (2 зверху, 2 знизу) */
+  .footer-head_right {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 20px;
+    align-items: start;
+  }
+
+  .footer_content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer_bottom {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Бічні декори campaign ховаємо на мобілі, контент — на всю ширину */
+  .campaign_decor {
+    display: none;
+  }
+
+  .campaign_wrapper-big .campaign_wrapper {
+    flex: 1;
+  }
+
+  /* -------------------------- Quote form --------------------------- */
+  .quote_form-body {
+    padding: 20px 18px 24px;
+    gap: 22px;
+  }
+
+  .quote_field-title {
+    font-size: 16px;
+  }
+
+  /* Радіо — 2 в ряд на всю ширину */
+  .quote_radios {
+    gap: 10px;
+  }
+
+  .quote_radio {
+    flex: 1 1 calc(50% - 5px);
+    min-width: 0;
+    justify-content: center;
+  }
+
+  /* CLV / слайдер / % — на всю ширину */
+  .quote_field.third,
+  .quote_num,
+  .quote_range-bar,
+  .quote_pct {
+    max-width: 100%;
+  }
+
+  .quote_pct {
+    flex: 1 1 100%;
+  }
+
+  /* Контакти — стовпчиком */
+  .quote_control {
+    flex: 1 1 100%;
+  }
+
+  .banner-congrats_wrapper {
+    min-height: 50px;
+  }
+
+  .text-label-medium.white {
+    text-align: center;
+  }
+
+  .hero-congrats_steps-head {
+    display: flex;
+  }
+
+  .hero-congrats_steps-image {
+    display: none;
+  }
+
+  .hero-congrats_steps-image-mobile {
+    display: block;
+  }
+
+  .hero-congrats_steps-text-copy {
+    padding-top: 15px;
+  }
+
+  .banner-info_image-big-mobile {
+    display: block;
+  }
+
+  .banner-info_image-big {
+    display: none;
+  }
+
+  .reviews_item {
+    margin-bottom: 20px;
+  }
+
+  .reviews_title-wrap {
+    margin-bottom: 15px;
+  }
+
+  .hero-congrats_steps-item {
+    padding-top: 8px;
+  }
+
+  .hero-congrats_steps-item-num {
+    font-size: 14px;
+    min-height: 25px;
+  }
+
+  .hero-congrats_steps-item-body {
+    padding: 20px;
+  }
+
+  .hero-congrats_steps-item-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-congrats_steps-item-video {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero-call_block-body {
+    padding: 20px 20px 24px;
+  }
+
+  .hero-call_block-footer {
+    padding: 18px 20px;
+  }
+
+  .banner-info_decor {
+    display: none;
+  }
+
+  .banner-info_list {
+    padding: 0px;
+  }
+
+  .banner-info_image-big {
+    margin-top: 20px;
+  }
+
+  .question {
+    padding: 0px;
+  }
+
+  .question_wrapper {
+    padding-top: 25px;
+  }
+
+  .header-call {
+    min-height: 60px;
+  }
+
+  .footer-banner_wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-banner_wrapper {
+    min-height: 80px;
+  }
+
+  .hiw_handoff {
+    display: none;
+  }
+}

@@ -1,0 +1,152 @@
+.reviews {
+    position: relative;
+    padding: 0px 45px;
+}
+
+.reviews_wrappper {
+
+    padding: 40px 0px;
+}
+
+.reviews_video {
+    position: relative;
+    cursor: pointer;
+}
+
+/* Play-іконка плавно збільшується при наведенні на відео */
+.hero-inner_list-item-lightbox-play {
+    transition: transform 0.3s ease;
+}
+
+.reviews_video:hover .hero-inner_list-item-lightbox-play,
+.hero-inner_list-item-lightbox:hover .hero-inner_list-item-lightbox-play {
+    transform: translate(-50%, -50%) scale(1.12);
+}
+
+.reviews_strapline {
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 12px;
+}
+
+.reviews_title-wrap {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.reviews_list {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1080px;
+}
+
+.reviews_item {
+    background-color: #F6F6F6;
+    padding: 16px 16px 15px;
+    width: 100%;
+    max-width: 349px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.reviews_item.modify {
+    padding: 6px 4px 15px;
+}
+
+.reviews_item.modify .reviews_head {
+    padding: 0px 14px;
+}
+
+.reviews_item.modify .reviews_content {
+    padding: 0px 14px;
+}
+
+.reviews_item.modify .reviews_info {
+    padding: 0px 14px;
+}
+
+.reviews_video {
+    margin-bottom: 20px;
+}
+
+.reviews_head {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.reviews_content {
+    margin-bottom: 20px;
+}
+
+.reviews_info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.reviews_avatar {
+    width: 100%;
+    max-width: 44px;
+}
+
+.reviews_info-content {}
+
+.reviews_cta {
+    position: relative;
+    cursor: pointer;
+    z-index: 5;
+    min-height: 44px;
+    padding: 0px 12px 0px 11px;
+    width: max-content;
+    border-radius: 100px;
+    background: linear-gradient(180deg, #3E3E3E 0%, #212126 100%);
+    box-shadow: 0 0 0 1px #212126, 0 1px 0 0 rgba(255, 255, 255, 0.10) inset, 0 1px 3px 0 rgba(33, 33, 38, 0.20);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+    margin: 0 auto;
+    transition: all .4s ease 0s;
+}
+
+.reviews_cta:hover {
+    transform: scale(1.03);
+}
+
+.reviews_cta-image {
+    width: 100%;
+    max-width: 120px;
+}
+
+.reviews-decor {
+    width: 100%;
+    height: 320px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, #FFF 61.63%);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+}
+
+/* -------- Expand / collapse (Load More ↔ Show Less) -------- */
+/* За замовчуванням (згорнуто): видно плюс, minus прихований */
+.reviews_cta-icon-minus {
+    display: none;
+}
+
+/* Розгорнуто: ховаємо плюс, показуємо minus, прибираємо градієнт-decor */
+.reviews.expanded .reviews_cta-icon-plus {
+    display: none;
+}
+
+.reviews.expanded .reviews_cta-icon-minus {
+    display: block;
+}
+
+.reviews.expanded .reviews-decor {
+    display: none;
+}

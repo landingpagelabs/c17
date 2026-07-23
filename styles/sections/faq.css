@@ -1,0 +1,84 @@
+.faq_wrapper {
+    padding-top: 0px;
+}
+
+.faq{
+    padding: 0px 45px;
+}
+
+.faq_head {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.faq_list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 716px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+
+.item-faq {
+    background-color: #F6F6F6;
+    border-radius: 14px;
+    padding-inline: 20px;
+    padding-block: 22px;
+    cursor: pointer;
+    transition: background-color 0.25s ease;
+}
+.faq_bottom-mobile{
+    display: none;
+}
+
+/* Hover — лише для неактивних (закритих) айтемів */
+.item-faq:not(.active):hover {
+    background-color: #F0F0F0;
+}
+
+.item-faq_head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.item-faq-panel_text-wrap {
+    margin-top: 20px;
+    color: #2A2A2A;
+}
+
+.faq_bottom {
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.item-faq_panel {
+    height: 0px;
+    overflow: hidden;
+    transition: 400ms;
+}
+
+.item-faq.active .item-faq_panel {
+    height: auto;
+}
+
+/* Іконка не стискається, коли заголовок довгий */
+.item-faq-head_icon-wrap {
+    flex-shrink: 0;
+}
+
+/* Іконка: "+" → "–" (вертикальна лінія повертається в горизонталь) */
+.item-faq-head_icon-wrap svg path {
+    transform-box: fill-box;
+    transform-origin: center;
+    transition: transform .3s ease;
+}
+
+.item-faq.active .item-faq-head_icon-wrap svg path:first-child {
+    transform: rotate(90deg);
+}

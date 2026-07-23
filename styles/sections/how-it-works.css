@@ -1,0 +1,684 @@
+.how-it-works {
+    padding: 0px 45px;
+}
+
+.how-it-works_wrapper {
+    padding: 40px 0px;
+}
+
+.how-it-works_strapline {
+    text-align: center;
+    margin-bottom: 12px;
+
+}
+
+.how-it-works_title-wrap {
+    width: 100%;
+    max-width: 664px;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.hiw {
+  position: relative;
+  /* Розмір годинника = найменше з: ширини контейнера, 714px і 80vh.
+     Обмеження по висоті гарантує, що на невисоких екранах уся дуга
+     вміщується у видиму область (fold) і не обрізається. */
+  width: min(100%, 714px, 80vh);
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+}
+
+.hiw_clock-track {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hiw_clock {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.hiw_clock-fill {
+  transform: rotate(-90deg);
+  transform-box: view-box;
+  transform-origin: center;
+}
+
+/* ---- steps ---- */
+
+.hiw_steps {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+}
+
+.hiw_step {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 105px;
+  opacity: 0;
+}
+
+.hiw_step.is-active {
+  opacity: 1;
+}
+
+.hiw_step-day {
+  font-family: "PP Mori", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.35;
+  color: #5a5a5a;
+  margin-bottom: 8px;
+}
+
+.hiw_step-title {
+  font-family: "PP Mori", sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: #000;
+  margin-bottom: 14px;
+}
+
+.hiw_step-text {
+  font-family: "PP Mori", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.45;
+  color: #2a2a2a;
+  max-width: 488px;
+  margin-bottom: 24px;
+}
+
+/* ---- generic card bits ---- */
+
+.hiw_card {
+  position: relative;
+  overflow: hidden;
+  background: #f6f6f6;
+  box-shadow:
+    0px 0px 0px 4.5px #f9f9f8 inset,
+    0px 2px 4px rgba(0, 0, 0, 0.05),
+    0px 1px 2px rgba(0, 0, 0, 0.08);
+  outline: 1px solid #e2e1de;
+  outline-offset: -1px;
+  margin-bottom: 22px;
+}
+
+.hiw_card-fade {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 64px;
+  background: linear-gradient(0deg, #f6f6f6 24%, rgba(246, 246, 246, 0) 100%);
+  pointer-events: none;
+}
+
+.hiw_row-label {
+  font-family: "SF Pro Display", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.35;
+  color: #000;
+}
+
+.hiw_check {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 1.2px solid #cacaca;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+}
+
+.hiw_check-icon {
+  opacity: 0;
+  transform: scale(0.4);
+}
+
+.hiw_check.is-on {
+  background: #12a557;
+  border-color: #12a557;
+}
+
+.hiw_check.is-on .hiw_check-icon {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.hiw_check--empty {
+  background: #fff;
+}
+
+.hiw_check--dash {
+  background: #fff;
+}
+
+.hiw_check--dash i {
+  width: 8px;
+  height: 1.5px;
+  background: #cacaca;
+  border-radius: 1px;
+}
+
+/* ---- step 1: browser card ---- */
+
+.hiw_card--browser {
+  width: 318px;
+  border-radius: 13px;
+  padding: 4px;
+}
+
+.hiw_browser-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  border-radius: 10px;
+  padding: 7px 6px 7px 12px;
+  margin-bottom: 4px;
+}
+
+.hiw_dots {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.hiw_dot {
+  width: 10.4px;
+  height: 10.4px;
+  border-radius: 50%;
+}
+
+.hiw_dot--red {
+  background: #ff4b59;
+}
+
+.hiw_dot--yellow {
+  background: #ffc600;
+}
+
+.hiw_dot--green {
+  background: #00ca48;
+}
+
+.hiw_pill {
+  font-family: "PP Mori", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.25;
+  color: #fff;
+  background: linear-gradient(180deg, #292929 0%, #111111 100%);
+  border-radius: 7px;
+  padding: 7px 18px;
+}
+
+.hiw_rows {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hiw_row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 11px 9px;
+  min-height: 42px;
+}
+
+/* ---- step 2: panel card ---- */
+
+.hiw_card--panel {
+  width: 333px;
+  height: 205px;
+  border-radius: 13px 13px 0 0;
+  padding: 8px 8px 0;
+}
+
+.hiw_panel-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  margin-bottom: 14px;
+}
+
+.hiw_panel-head span {
+  font-family: "PP Mori", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  color: #999999;
+}
+
+.hiw_slider {
+  position: relative;
+  height: 32px;
+  margin: 0 10px 14px;
+  display: flex;
+  align-items: center;
+}
+
+.hiw_slider-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 32px;
+  width: 110px;
+  background: linear-gradient(90deg, #dfd3fd 0%, #dfd3fd 50%, #a07bfb 100%);
+  border-radius: 100px;
+}
+
+.hiw_slider-handle {
+  position: absolute;
+  left: 114px;
+  top: 0;
+  z-index: 2;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow:
+    0px 8px 16px rgba(0, 0, 0, 0.06),
+    0px 1px 3px rgba(0, 0, 0, 0.06),
+    0 0 0 1px rgba(0, 0, 0, 0.02);
+}
+
+.hiw_slider-dots {
+  position: absolute;
+  right: 6px;
+  top: 0;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  gap: 17px;
+}
+
+.hiw_slider-dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.hiw_opt {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 9px 10px;
+  min-height: 40px;
+  margin-bottom: 6px;
+}
+
+.hiw_opt--muted {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.hiw_opt--muted .hiw_row-label {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.hiw_radio {
+  flex: none;
+  margin-left: auto;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #e2e4e9;
+}
+
+.hiw_radio::after {
+  content: "";
+  position: absolute;
+  inset: 1.5px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+.hiw_radio.is-on {
+  background: #7662e2;
+}
+
+.hiw_radio.is-on::after {
+  inset: 6px;
+  box-shadow: none;
+}
+
+/* ---- step 3: handoff card ---- */
+
+.hiw_handoff {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.hiw_bubble {
+  position: relative;
+  margin-bottom: 18px;
+  width: max-content;
+  z-index: 2;
+  font-family: "PP Mori", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.45;
+  color: #fff;
+  background: #21201c;
+  border-radius: 70px;
+  padding: 7px 15px;
+  box-shadow: 0px 1.5px 0px 1px rgba(255, 255, 255, 0.24) inset;
+  outline: 1px solid rgba(0, 0, 0, 0.12);
+  outline-offset: -1px;
+  white-space: nowrap;
+}
+
+.hiw_bubble::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  width: 11px;
+  height: 11px;
+  background: #21201c;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.hiw_card--handoff {
+  width: 358px;
+  background: #fff;
+  border-radius: 13px 13px 0 0;
+  padding: 4px;
+}
+
+.hiw_handoff-flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  width: 100%;
+  background: #f6f6f6;
+  border-radius: 9px;
+  padding: 6px 7px;
+}
+
+.hiw_handoff-logo {
+  flex: none;
+  width: 69px;
+  height: 69px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  border-radius: 11px;
+  box-shadow:
+    0px 2px 4px rgba(0, 0, 0, 0.05),
+    0px 1px 2px rgba(0, 0, 0, 0.08);
+  outline: 0.3px solid #dfdedc;
+  outline-offset: -0.3px;
+}
+
+.hiw_handoff-line {
+  flex: none;
+  width: 42px;
+  height: 1px;
+  background: #d9d9d9;
+}
+
+.hiw_handoff-check {
+  flex: none;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow:
+    0px 2px 5px rgba(0, 0, 0, 0.05),
+    0px 1px 2px rgba(0, 0, 0, 0.08);
+  outline: 0.3px solid #dfdedc;
+  outline-offset: -0.3px;
+}
+
+.hiw_handoff-check-badge {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #289f40;
+  border-radius: 50%;
+  box-shadow:
+    0px 3px 6px rgba(31, 31, 31, 0.15),
+    inset 0 0.6px 0.6px rgba(255, 255, 255, 0.6);
+}
+
+.hiw_handoff-team {
+  flex: none;
+  position: relative;
+  width: 69px;
+  height: 68px;
+}
+
+.hiw_handoff-avatar {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow:
+    0px 2px 5px rgba(0, 0, 0, 0.05),
+    0px 1px 2px rgba(0, 0, 0, 0.08);
+  outline: 0.38px solid #dfdedc;
+  outline-offset: -0.38px;
+}
+
+.hiw_handoff-avatar--top {
+  left: 14px;
+  top: 5px;
+  z-index: 1;
+}
+
+.hiw_handoff-avatar--bl {
+  left: -4px;
+  top: 28px;
+  z-index: 2;
+}
+
+.hiw_handoff-avatar--br {
+  left: 33px;
+  top: 28px;
+  z-index: 3;
+}
+
+.hiw_handoff-labels {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 7px 8px;
+}
+
+.hiw_handoff-labels-left {
+  font-family: "PP Mori", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.hiw_handoff-labels-right {
+  font-family: "PP Mori", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  color: #999999;
+}
+
+.hiw_bar {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 38px;
+  padding: 0 3px 4px;
+}
+
+.hiw_bar-fill {
+  width: 72%;
+  height: 38px;
+  background: rgba(40, 159, 64, 0.29);
+  border-radius: 8px 0 0 8px;
+}
+
+.hiw_bar-rest {
+  flex: 1;
+  height: 38px;
+  background: #f6f6f6;
+  border-radius: 0 8px 8px 0;
+}
+
+/* ---- fraction / progress counter ---- */
+
+.hiw_fraction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.hiw_fraction-count {
+  font-family: "PP Mori", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #a3a3a3;
+}
+
+.hiw_fraction-count span {
+  color: #1a1a1a;
+}
+
+.hiw_track {
+  display: flex;
+  width: 108px;
+  height: 4px;
+  border-radius: 2px;
+  background: #e2e4e9;
+  overflow: hidden;
+}
+
+.hiw_track-seg {
+  flex: 1;
+  height: 100%;
+  background: transparent;
+}
+
+.hiw_track-seg.is-on {
+  background: #1a1a1a;
+}
+
+.hiw_fraction-note {
+  font-family: "PP Mori", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: 0.02em;
+  color: #a3a3a3;
+  margin-top: 4px;
+}
+
+.how-it-works_animation{
+    margin-bottom: 40px;
+}
+
+/* -------------------------- Мобільна навігація --------------------------
+   На десктопі крок міняється скролом; на мобілі — кнопками Prev/Next,
+   а прогрес показує дуга-годинник. */
+.hiw_nav {
+    display: none;
+}
+
+@media (max-width: 991px) {
+    /* Ховаємо ілюстрацію-картку і фракцію-скрол — крок стає компактним */
+    .hiw_card,
+    .hiw_fraction {
+        display: none;
+    }
+
+    .hiw_nav {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        position: absolute;
+        left: 50%;
+        bottom: 12%;
+        transform: translateX(-50%);
+        z-index: 6;
+    }
+
+    .hiw_nav-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        min-height: 28px;
+        border-radius: 15px;
+        border: 0.5px solid #E2E1DE;
+        background: #F6F6F6;
+        color: #1A1A1A;
+        cursor: pointer;
+        transition: opacity .2s ease;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .hiw_nav-btn svg {
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.06), 0 8px 16px 0 rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(0, 0, 0, 0.02);
+    }
+
+    .hiw_nav-next {
+        padding: 0 3px 0 10px;
+    }
+
+    .hiw_nav-prev {
+        padding: 0 10px 0 3px;
+        color: #5A5A5A;
+    }
+
+    .hiw_nav-btn:disabled {
+        opacity: .4;
+        cursor: default;
+    }
+}

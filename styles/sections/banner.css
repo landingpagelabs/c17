@@ -1,0 +1,95 @@
+.banner {
+    padding: 0px 45px;
+}
+
+.banner_wrapper {
+    display: flex;
+}
+
+
+
+.banner_decor {
+    width: 100%;
+    max-width: 80px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.banner_decor.right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: auto;
+}
+
+.decor-padding {
+    padding-inline: 80px;
+}
+
+.banner_list {
+    display: flex;
+    width: 100%;
+    max-width: 1030px;
+    background-color: #EDEDED;
+    gap: 1px;
+}
+
+.banner_item {
+    width: 100%;
+    max-width: 257.5px;
+    min-height: 194px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFF;
+    flex-direction: column;
+    border-top: 1px solid #EDEDED;
+    border-bottom: 1px solid #EDEDED;
+
+}
+
+.banner_item.first {
+    border-left: 1px solid #EDEDED;
+}
+
+.banner_item.last {
+    border-right: 1px solid #EDEDED;
+}
+
+@media (max-width: 1310px) {
+    .banner_item.first {
+        border-left: none;
+    }
+
+    .banner_item.last {
+        border-right: none;
+    }
+}
+
+.banner_item svg {
+    margin: 0 auto;
+    margin-bottom: 12px;
+}
+
+.banner_item-title {
+    color: #1A1A1A;
+    text-align: center;
+    font-family: "PP Mori";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 105%;
+    letter-spacing: -0.16px;
+    margin-bottom: 5px;
+}
+
+.banner_item-text {
+    color: #2A2A2A;
+    text-align: center;
+    font-family: "PP Mori";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 145%;
+}

@@ -1,0 +1,596 @@
+/* ============================ QUOTE (Pricing form) ============================ */
+.quote_wrapper {
+    padding: 40px 0px 60px 0px;
+}
+
+.quote{
+    padding: 0px 45px;
+}
+
+.quote_strapline {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.quote_title-wrap {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.quote_text-wrap {
+    width: 100%;
+    max-width: 470px;
+    margin: 0 auto 40px;
+    text-align: center;
+}
+
+.quote_decor {
+    width: 100%;
+    max-width: 138.5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.quote_decor.right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: auto;
+}
+
+@media (max-width: 1100px) {
+    .quote_decor {
+        display: none;
+    }
+
+    .quote_decor.right {
+        display: none;
+    }
+}
+
+.quote_form {
+    width: 100%;
+    max-width: 710px;
+    margin: 0 auto;
+    border-radius: 18px;
+    background: #fff;
+    overflow: hidden;
+    box-shadow:
+        0 0 0 1px rgba(51, 51, 51, 0.10),
+        0 2px 4px rgba(51, 51, 51, 0.04),
+        0 12px 24px -8px rgba(51, 51, 51, 0.08),
+        0 40px 60px -30px rgba(161, 161, 170, 0.18);
+}
+
+.quote_form-top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 36px;
+    padding: 0 14px;
+    background: #f9f9f9;
+    border-bottom: 1px solid #ededed;
+}
+
+.quote_form-body {
+    position: relative;
+    z-index: 3;
+    border-radius: 0 0 18px 18px;
+    background: #FFF;
+    box-shadow: 0 0 0 1px rgba(51, 51, 51, 0.12), 0 1px 1px -0.5px rgba(51, 51, 51, 0.05), 0 3px 3px -1.5px rgba(51, 51, 51, 0.05), 0 6px 6px -3px rgba(51, 51, 51, 0.05), 0 12px 12px -6px rgba(51, 51, 51, 0.05), 0 24px 24px -12px rgba(51, 51, 51, 0.05), 0 120px 120px -80px rgba(161, 161, 170, 0.04);
+}
+
+.quote_dot {
+    width: 12.7px;
+    height: 12.7px;
+    border-radius: 50%;
+}
+
+.quote_dot--red {
+    background: #ff5f57;
+}
+
+.quote_dot--yellow {
+    background: #febc2e;
+}
+
+.quote_dot--green {
+    background: #28c840;
+}
+
+.quote_form-body {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    padding: 24px 36px 30px;
+}
+
+.quote_field {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.quote_field-title {
+    font-family: "PP Mori", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.35;
+    letter-spacing: 0em;
+    color: #1a1a1a;
+}
+
+.quote_field-title span {
+    color: #b3b3b3;
+    margin-right: 6px;
+}
+
+/* ---- radios ---- */
+.quote_radios {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 10px;
+}
+
+.quote_field.third {
+    width: 100%;
+    max-width: 352px;
+}
+
+.quote_radio {
+    position: relative;
+    min-width: 82px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 44px;
+    padding: 0px 16px 0px 11px;
+    border: 1px solid #e2e1de;
+
+    border-radius: 12px;
+    background: #fff;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.quote_radio input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.quote_radio-dot {
+    flex: none;
+    position: relative;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 1.5px solid #cfcfcf;
+    transition: border-color 0.2s ease;
+}
+
+.quote_radio-dot::after {
+    content: "";
+    position: absolute;
+    inset: 4px;
+    border-radius: 50%;
+    background: #5900ff;
+    transform: scale(0);
+    transition: transform 0.2s ease;
+}
+
+.quote_radio-label {
+    font-family: "PP Mori", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+
+}
+
+.quote_radio:hover {
+    border-color: #c7c2ff;
+}
+
+.quote_radio.is-checked {
+    border-color: #5900ff;
+    box-shadow: inset 0 0 0 1px #5900ff;
+    background: #fbfaff;
+}
+
+.quote_radio.is-checked .quote_radio-dot {
+    border-color: #5900ff;
+}
+
+.quote_radio.is-checked .quote_radio-dot::after {
+    transform: scale(1);
+}
+
+.quote_radio input:focus-visible+.quote_radio-dot {
+    box-shadow: 0 0 0 3px rgba(89, 0, 255, 0.22);
+}
+
+/* ---- number field (CLV) ---- */
+.quote_num {
+    display: flex;
+    align-items: center;
+    min-height: 58px;
+    border: 1px solid #e2e1de;
+    border-radius: 12px;
+    background: #fff;
+    overflow: hidden;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 310px;
+    position: relative;
+}
+
+.quote_num-prefix {
+    position: absolute;
+    top: 50%;
+    left: 4px;
+    flex: none;
+    width: 44px;
+    height: 44px;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-50%);
+    background: #f3f3f2;
+    border-radius: 7px;
+    border-right: 1px solid #e2e1de;
+    font-family: "PP Mori", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.quote_num-input {
+    flex: 1;
+    min-width: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    padding: 0 16px;
+    text-align: center;
+    font-family: "PP Mori", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    padding-left: 55px;
+    color: #1a1a1a;
+}
+
+.quote_num-steppers {
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    margin-right: 4px;
+    border-radius: 7px;
+    box-shadow: 0 0 0 1px #ececec, 0 1px 2px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+}
+
+.quote_num-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 24px;
+    border: 0;
+    padding: 0;
+    background: #F0F0F0;
+    cursor: pointer;
+
+}
+
+.quote_range-edge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    background-color: #F0F0F0;
+    border-radius: 7px;
+}
+
+.quote_num-btn:hover {
+    background: #f3f3f2;
+}
+
+
+/* ---- range (close rate) ---- */
+.quote_range {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+}
+
+.quote_range-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 54px;
+    padding: 0 4px;
+    border: 1px solid #e2e1de;
+    border-radius: 12px;
+    background: #fff;
+    width: 100%;
+    max-width: 429px;
+    gap: 6px;
+}
+
+.quote_field.four {
+    gap: 25px;
+}
+
+.quote_range-edge {
+    flex: none;
+    font-family: "PP Mori", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #000000;
+}
+
+
+
+.quote_range-input {
+    -webkit-appearance: none;
+    appearance: none;
+    flex: 1;
+    min-width: 0;
+    height: 44px;
+    border-radius: 10px;
+    /* світло-фіолетова заливка ліворуч + світло-сірий трек праворуч (оновлює JS) */
+    background: linear-gradient(90deg, #ddd1ff 0%, #ddd1ff 20%, #ececec 20%, #ececec 100%);
+    cursor: pointer;
+}
+
+/* WebKit: прозорий трек (щоб було видно градієнт-фон інпута) + тонкий повзунок */
+.quote_range-input::-webkit-slider-runnable-track {
+    height: 44px;
+    border-radius: 10px;
+    background: transparent;
+}
+
+.quote_range-input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    margin-top: 6px;
+    /* (40 - 28) / 2 — центруємо по вертикалі */
+    width: 6px;
+    height: 28px;
+    border-radius: 100px;
+    background: #5900ff;
+    cursor: pointer;
+}
+
+/* Firefox */
+.quote_range-input::-moz-range-track {
+    height: 40px;
+    border-radius: 10px;
+    background: transparent;
+}
+
+.quote_range-input::-moz-range-thumb {
+    width: 6px;
+    height: 28px;
+    border: 0;
+    border-radius: 100px;
+    background: #5900ff;
+    cursor: pointer;
+}
+
+.quote_pct {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 56px;
+    border: 1px solid #e2e1de;
+    border-radius: 12px;
+    background: #fff;
+    overflow: hidden;
+    width: 100%;
+    max-width: 197px;
+}
+
+.quote_pct-prefix {
+    flex: none;
+    width: 46px;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f3f3f2;
+    border-right: 1px solid #e2e1de;
+    font-family: "PP Mori", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.quote_pct-input {
+    flex: 1;
+    min-width: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    padding: 0 14px;
+    font-family: "PP Mori", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #1a1a1a;
+    text-align: end;
+}
+
+/* ---- contacts ---- */
+.quote_contacts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.quote_control {
+    flex: 1 1 calc(33.333% - 8px);
+    min-width: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.quote_contacts input {
+    width: 100%;
+    min-height: 56px;
+    padding: 0 18px;
+    border: 1px solid #e2e1de;
+    border-radius: 12px;
+    background: #fff;
+    outline: 0;
+    font-family: "PP Mori", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #1a1a1a;
+}
+
+.quote_contacts input::placeholder {
+    color: #a0a0a0;
+}
+
+.quote_contacts input:focus {
+    border-color: #5900ff;
+    box-shadow: inset 0 0 0 1px #5900ff;
+}
+
+/* ---- bottom ---- */
+.quote_form-bottom {
+    margin-top: -50px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px;
+    padding: 14px 20px;
+    background: #f0f0f0;
+    border-top: 1px solid #ededed;
+}
+
+
+.quote_pct-prefix {
+    position: absolute;
+    top: 50%;
+    left: 4px;
+    flex: none;
+    width: 44px;
+    height: 44px;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-50%);
+    background: #f3f3f2;
+    border-radius: 7px;
+    border-right: 1px solid #e2e1de;
+    font-family: "PP Mori", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+
+}
+
+.quote_submit {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: "PP Mori", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0em;
+    color: #5900ff;
+    padding-top: 52px;
+}
+
+.quote_submit span {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.quote_submit svg {
+    flex: none;
+}
+
+/* Кнопка приглушена, поки всі поля не заповнені (клікабельна — показує помилки) */
+.quote_submit {
+    opacity: 0.45;
+    cursor: pointer;
+    transition: opacity 0.25s ease;
+}
+
+.quote_submit.is-active {
+    opacity: 1;
+}
+
+/* ---- errors ---- */
+.quote_error {
+    display: none;
+    margin-top: 6px;
+    font-family: "PP Mori", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.3;
+    color: #e5484d;
+}
+
+.quote_field.is-error>.quote_error,
+.quote_control.is-error .quote_error {
+    display: block;
+}
+
+.quote_control .quote_error {
+    margin-top: 0;
+}
+
+.quote_field.is-error .quote_num {
+    border-color: #e5484d;
+}
+
+.quote_field.is-error .quote_radio {
+    border-color: #f1b2b4;
+}
+
+.quote_control.is-error input {
+    border-color: #e5484d;
+}
+
+.campaign_wrapper-big {
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+}
+
+/* Контент — центральна колонка, декори заповнюють простір з боків */
+.campaign_wrapper-big .campaign_wrapper {
+    flex: none;
+}
+
+.campaign_decor-left,
+.campaign_decor-right {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: stretch;
+    overflow: hidden;
+}
+
+.campaign_decor-left img,
+.campaign_decor-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}

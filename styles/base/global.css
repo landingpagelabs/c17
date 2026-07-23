@@ -1,0 +1,292 @@
+/* ====================================================================
+   ТИПОГРАФІКА (утиліти)
+   Класи-хелпери для тексту. line-height у частках,
+   letter-spacing у em (−1% = −0.01em).
+   ==================================================================== */
+
+/* Миттєвий скрол по якорях меню (How It Works / Services / Reviews).
+   scroll-margin — запас під фіксований хедер (~80px), щоб секція не ховалась. */
+html {
+  scroll-behavior: auto;
+}
+
+#how-it-works,
+#services,
+#reviews {
+  scroll-margin-top: 96px;
+}
+
+.padding-global {
+  padding: 0px 20px;
+}
+
+.padding-global.decor {
+  border-right: 1px solid #EDEDED;
+  border-left: 1px solid #EDEDED;
+  position: relative;
+}
+
+.container-large {
+  width: 100%;
+  max-width: 1190px;
+  margin: 0 auto;
+}
+
+.container-large-small {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.cta-strapline-item {
+  width: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F6F6F6;
+  border: 1px solid #E2E1DE;
+  padding: 0px 12px 0px 5px;
+  min-height: 28px;
+  gap: 5px;
+  border-radius: 15px;
+
+}
+
+.cta-strapline {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  gap: 3px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.cta-strapline-item-number {
+  width: 18.5px;
+  height: 18.5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFF;
+  border-radius: 50%;
+}
+
+.cta-main {
+  width: max-content;
+  color: #FFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  min-height: 60px;
+  padding: 0px 16px 0px 33px;
+  gap: 10px;
+  background: #5900FF;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Біжуче світло — зліва направо, лише на hover */
+.cta-main::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+  transform: skewX(-20deg);
+  pointer-events: none;
+  opacity: 0;
+}
+
+/* Hover: тінь знизу + запуск світла */
+.cta-main:hover {
+  box-shadow: 0 14px 26px -8px rgba(89, 0, 255, 0.55);
+}
+
+.cta-main:hover::after {
+  opacity: 1;
+  animation: cta-shine 0.8s linear 1;
+}
+
+@keyframes cta-shine {
+  0% {
+    left: -60%;
+  }
+
+  100% {
+    left: 130%;
+  }
+}
+
+.is-semibold {
+  font-weight: 600;
+}
+
+.opacity {
+  opacity: 0;
+}
+
+.white {
+  color: #FFF;
+}
+
+.gray {
+  color: #5A5A5A;
+}
+
+.light-gray {
+  color: #BFBFBF;
+}
+
+.secondary {
+  color: #2A2A2A !important;
+}
+
+.fw-600-black {
+  font-weight: 600 !important;
+  color: #1a1a1a;
+}
+
+/* -------------------------------- Headings -------------------------- */
+.title-h1 {
+  font-family: "PP Mori", sans-serif;
+  font-size: 55px;
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.title-h2 {
+  font-family: "PP Mori", sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.title-h3 {
+  font-family: "PP Mori", sans-serif;
+  font-size: 33px;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.title-h4 {
+  font-family: "PP Mori", sans-serif;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.title-h5 {
+  font-family: "PP Mori", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+/* -------------------------------- Body ------------------------------ */
+.text-body-large {
+  font-family: "PP Mori", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+}
+
+.text-body-regular {
+  font-family: "PP Mori", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: 0;
+}
+
+.text-body-small {
+  font-family: "PP Mori", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+.text-caption {
+  font-family: "PP Mori", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+/* -------------------------------- Labels ---------------------------- */
+.text-label-x-large {
+  font-family: "PP Mori", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+}
+
+.text-label-large {
+  font-family: "PP Mori", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+}
+
+.text-label-medium {
+  font-family: "PP Mori", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+}
+
+.text-label-small {
+  font-family: "PP Mori", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+}
+
+.text-label-extra-small {
+  font-family: "PP Mori", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.text-label-double-extra-small {
+  font-family: "PP Mori", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.text-label-triple-extra-small {
+  font-family: "PP Mori", sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.text-label-mini-large {
+  font-family: "PP Mori", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}

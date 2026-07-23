@@ -1,0 +1,229 @@
+    .hero {
+        padding: 0px 45px;
+    }
+
+    /* Розмір і позиція .hero_vector задані нижче (адаптивно, з обмеженням
+       ширини — щоб на великих екранах декор не роздувався). */
+
+    .hero_wrapper {
+        padding: 140px 0px 60px 0px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .hero_logo {
+        width: 100%;
+        max-width: 143px;
+        margin: 0 auto;
+        margin-bottom: 30px;
+    }
+
+    .hero_strapline {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 15px;
+
+    }
+
+    .hero_title-wrap {
+        width: 100%;
+        max-width: 714px;
+        margin: 0 auto;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    .hero_text-wrap {
+        width: 100%;
+        max-width: 565px;
+        margin: 0 auto;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .hero_decor {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 40px;
+    }
+
+    .hero_vector {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 1440px;
+        height: auto;
+    }
+
+    .hero_vector-mobile {
+        display: none;
+    }
+
+
+    .hero-inner {
+        padding: 40px 0px 0px 0px;
+
+    }
+
+    .hero-inner_list {
+        width: 100%;
+        max-width: 1080px;
+        display: flex;
+        gap: 10px;
+        margin: 0 auto;
+    }
+
+    .hero-inner_list-left {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        width: 100%;
+        max-width: 410px;
+    }
+
+    .hero-inner_title {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .hero-inner_list-item {
+        width: 100%;
+        max-width: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 34px 0px 18px;
+        background: #FFF;
+        border-radius: 12px;
+
+    }
+
+    .hero-inner_list-image {
+        width: 100%;
+        max-width: 105px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+
+    .hero-inner_list-image.item-5 {
+        width: 100%;
+        max-width: 179px;
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
+
+
+    .hero-inner_list-text {
+        width: max-content;
+        padding: 0px 8px;
+        border-radius: 100px;
+        min-height: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #F2F2F2;
+    }
+
+    .hero-inner_list-center {
+        width: 100%;
+        max-width: 240px;
+    }
+
+    .hero-inner_list-right {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        width: 100%;
+        max-width: 410px;
+    }
+
+    .hero-inner_list-image.item-2 {
+        width: 100%;
+        max-width: 57px;
+    }
+
+    .hero-inner_list-image.item-3 {
+        width: 100%;
+        max-width: 74px;
+    }
+
+    .hero-inner_list-image.item-4 {
+        width: 100%;
+        max-width: 114px;
+    }
+
+    .hero-inner_list-image.item-6 {
+        width: 100%;
+        max-width: 120px;
+    }
+
+    .hero-inner_list-image.item-7 {
+        width: 100%;
+        max-width: 73px;
+    }
+
+    .hero-inner_list-image.item-8 {
+        width: 100%;
+        max-width: 99px;
+    }
+
+    .hero-inner_list-image.item-9 {
+        width: 100%;
+        max-width: 84px;
+    }
+
+    .hero-inner_list-item.center {
+        max-width: 240px;
+        height: 100%;
+        padding: 6px 6px 14px 6px;
+        justify-content: start;
+    }
+
+    .hero-inner_list-item.center .hero-inner_list-image.item-4 {
+        margin-bottom: 10px;
+    }
+
+    .hero-inner_list-item-lightbox {
+        margin-bottom: 20px;
+    }
+
+    .hero-inner_list-item-lightbox {
+        position: relative;
+        cursor: pointer;
+    }
+
+    .hero-inner_list-item-lightbox-play {
+        cursor: pointer;
+        width: 47px;
+        height: 47px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 532.77px;
+        border: 0.712px solid rgba(255, 255, 255, 0.64);
+        background: rgba(255, 255, 255, 0.06);
+        background-blend-mode: plus-lighter;
+        box-shadow: -15.881px -14.801px 68.364px -17.091px rgba(0, 0, 0, 0.15), -2.647px -2.467px 17.091px -11.394px rgba(0, 0, 0, 0.15), 2.647px 2.467px 11.394px 0 rgba(255, 255, 255, 0.12) inset, 1.323px 1.233px 5.697px 0 rgba(255, 255, 255, 0.12) inset;
+        backdrop-filter: blur(2.848484754562378px);
+    }
+
+    /* Плавний fade-in стат-карток (ротацію запускає JS кожні ~10с).
+       М'яке осідання + delikatний clip-reveal, без різкого джиттера й скосу. */
+    @keyframes hero-glitch {
+        0%   { opacity: 0.25; transform: translateY(6px);  clip-path: inset(0 0 35% 0); }
+        45%  { opacity: 1;    transform: translateY(-1px); clip-path: inset(12% 0 0 0); }
+        100% { opacity: 1;    transform: none;             clip-path: inset(0 0 0 0); }
+    }
+
+    .hero-inner_list-item.is-glitch .hero-inner_list-image,
+    .hero-inner_list-item.is-glitch .hero-inner_list-text {
+        animation: hero-glitch 0.9s ease-out both;
+    }
+
+   

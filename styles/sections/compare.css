@@ -1,0 +1,257 @@
+.compare {
+    padding: 0px 45px;
+
+}
+
+.compare_wrapper {
+    padding: 40px 0px;
+}
+
+.compare_strapline {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+.compare_title-wrap {
+    width: 100%;
+    max-width: 524px;
+    margin: 0 auto;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.compare_table-col.second {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.17);
+}
+
+.tb-decor {
+    border-top: 1px solid #EDEDED;
+    border-bottom: 1px solid #EDEDED;
+}
+
+.compare_strapline-big {
+    display: flex;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.compare_strapline-stars {
+    display: flex;
+    margin-bottom: 6px;
+    justify-content: center;
+    align-self: center;
+}
+
+.compare_strapline-left-decor {
+    width: 100%;
+    max-width: 56px;
+}
+
+.compare_strapline-center-wrap {
+    width: 100%;
+    max-width: 187px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.compare_strapline-center-wrap-2 {
+    width: 100%;
+    max-width: 222px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-left: 8px;
+}
+
+.compare_strapline-big {
+    display: flex;
+    gap: 12px;
+}
+
+.compare_strapline-text-wrap {
+    text-align: center;
+}
+
+.compare_strapline-center-wrap > .secondary-text {
+    text-align: center;
+}
+
+.compare_strapline-info {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.compare_strapline-image {
+    width: 100%;
+    max-width: 28px;
+}
+
+.compare_strapline-right-decor {
+    width: 100%;
+    max-width: 56px;
+}
+
+
+.bold {
+    font-weight: 700;
+}
+
+
+.compare_text-wrap {
+    width: 100%;
+    max-width: 614px;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.compare_table {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    width: 100%;
+    max-width: 1080px;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    border-radius: 18px;
+    padding: 9px;
+    background: #FFF;
+    box-shadow: 0 0 0 1px rgba(51, 51, 51, 0.12), 0 1px 1px -0.5px rgba(51, 51, 51, 0.05), 0 3px 3px -1.5px rgba(51, 51, 51, 0.05), 0 6px 6px -3px rgba(51, 51, 51, 0.05), 0 12px 12px -6px rgba(51, 51, 51, 0.05), 0 24px 24px -12px rgba(51, 51, 51, 0.05), 0 120px 120px -80px rgba(161, 161, 170, 0.04);
+}
+
+
+.compare_table-row {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+.compare_table-col {
+    width: 100%;
+    position: relative;
+    max-width: 255px;
+    display: flex;
+    gap: 12px;
+    min-height: 80px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 0px 16px;
+    border-top: 1px solid rgba(145, 145, 145, 0.17);
+    border-left: 1px solid rgba(145, 145, 145, 0.17);
+    border-right: 1px solid rgba(145, 145, 145, 0.17);
+    z-index: 2;
+}
+
+.compare_table-col.top {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.compare_table-col.top img {
+    width: 100%;
+    max-width: 67px;
+}
+
+
+
+.compare_table-col.first {
+    width: 100%;
+    border-left: none;
+    border-right: none;
+    max-width: 267px;
+}
+
+.compare_decor {
+    position: absolute;
+    left: 287px;
+    top: 11px;
+    width: 100%;
+    max-width: 255px;
+    height: 97%;
+    border-radius: 12px;
+    background: linear-gradient(0deg, rgba(163, 161, 255, 0.40) 0%, rgba(163, 161, 255, 0.40) 100%), linear-gradient(0deg, #5855FF 37.13%, #8B3DFF 100%);
+}
+
+.compare_table-col.last {
+    border-bottom: 1px solid rgba(145, 145, 145, 0.17);
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+
+.compare_table-col.first.col {
+    border-top: none;
+}
+
+
+.compare_table-bottom {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    min-height: 87px;
+    align-items: center;
+    background: #F6F6F6;
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+    margin-top: -22px;
+    border-radius: 12px 12px 18px 18px;
+    overflow: hidden;
+    padding-top: 22px;
+
+}
+
+.compare_table-bottom-image {
+    width: 100%;
+    max-width: 107px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.compare_table-wrap {
+    margin-bottom: 40px;
+}
+
+/* Власний скролбар таблиці (показує JS лише коли є горизонтальний скрол) */
+.compare_scrollbar {
+    display: none;
+    position: relative;
+    width: 100%;
+    height: 6px;
+    margin-top: 14px;
+    border-radius: 100px;
+    background: #ECECEC;
+    touch-action: none;
+    cursor: pointer;
+}
+
+.compare_scrollbar-thumb {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    min-width: 32px;
+    border-radius: 100px;
+    background: #5900FF;
+    will-change: transform;
+}
+
+.compare_image {
+    width: 100%;
+    max-width: 714px;
+    margin: 0 auto;
+    margin-top: 40px;
+}

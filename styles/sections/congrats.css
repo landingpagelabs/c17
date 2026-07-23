@@ -1,0 +1,440 @@
+.banner-congrats {
+
+    background-color: #FF0000;
+}
+
+.banner-congrats_wrapper {
+    min-height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px
+}
+
+.hero-congrats {
+    padding: 0px 45px;
+}
+
+.hero-congrats_wrapper {
+    padding: 20px 0px 30px 0px;
+}
+
+.hero-congrats_strapline {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.hero-congrats_title-wrap {
+    width: 100%;
+    max-width: 564px;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.hero-congrats_steps-list {
+    width: 100%;
+    max-width: 714px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.hero-congrats_steps-item {
+    background: #F2F2F2;
+    border-radius: 14px;
+    padding: 18px 8px 8px;
+}
+
+.banner-info_image-big-mobile {
+    display: none;
+    margin-top: 20px;
+}
+
+.hero-congrats_steps-head {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.hero-congrats_steps-image-mobile {
+    margin-top: 15px;
+    display: none;
+}
+
+.hero-congrats_steps-item-num {
+    font-weight: 600;
+    font-size: 18px;
+    background: #FFF;
+    border-radius: 8px;
+    background: #FFF;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.06), 0 8px 16px 0 rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(0, 0, 0, 0.02);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 37px;
+    padding: 0px 11px;
+}
+
+.secondary-text {
+    color: #41424D;
+}
+
+.purple {
+    color: #5900FF;
+}
+
+.hero-congrats_steps-title-wrap {
+    text-align: center;
+    width: 100%;
+    max-width: 475px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+
+.hero-congrats_steps-text-wrap {
+    text-align: center;
+    width: 100%;
+    max-width: 549px;
+    margin: 0 auto;
+}
+
+.hero-congrats_steps-image {
+    margin-top: 15px;
+}
+
+.hero-congrats_steps-item-body {
+    background: #FFF;
+    padding: 24px 30px 30px 30px;
+    border-radius: 10px;
+}
+
+.hero-congrats_steps-action {
+    display: flex;
+    margin-top: 15px;
+    min-height: 32px;
+    justify-content: center;
+    align-items: center;
+    background: rgba(67, 67, 67, 0.82);
+    display: flex;
+    gap: 7px;
+    color: #FFF;
+}
+
+.hero-congrats_steps-text-copy {
+    cursor: pointer;
+    border-radius: 10px 10px 0 0;
+    border: 1px solid #077DFF;
+    background: #077DFF;
+    color: #FFF;
+    padding: 27.5px 30px;
+    margin-top: 15px;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.hero-congrats_steps-text-copy:hover {
+    background: #0067D6;
+    border-color: #0067D6;
+}
+
+.hero-congrats_steps-text-copy-btn {
+    cursor: pointer;
+    display: flex;
+    min-height: 43px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #FFF;
+    border-radius: 0 0 6px 6px;
+    background: #FFF;
+    box-shadow: 0 4px 4px 0 rgba(23, 23, 23, 0.04), 0 1px 2px 0 rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.06);
+    transition: background 0.2s ease;
+}
+
+.hero-congrats_steps-text-copy-btn:hover {
+    background: #F3F3F2;
+}
+
+.hero-congrats_steps-text-copy-btn:hover svg path {
+    fill: #077DFF;
+}
+
+.hero-congrats_steps-text-copy-btn:hover p {
+    color: #077DFF;
+}
+
+.hero-congrats_steps-text-copy-btn svg path,
+.hero-congrats_steps-text-copy-btn p {
+    transition: fill 0.2s ease, color 0.2s ease;
+}
+
+/* Тост "Text Copied !" — з'являється при копіюванні повідомлення */
+.copy-toast {
+    position: fixed;
+    left: 50%;
+    bottom: 40px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    border-radius: 10px;
+    background: #101011;
+    color: #FFF;
+    box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.24);
+    pointer-events: none;
+    opacity: 0;
+    transform: translate(-50%, 12px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.copy-toast.is-visible {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+.hero-congrats_steps-item-video {
+    width: 100%;
+    max-width: 224px;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Кнопка плей на маленьких вертикальних прев'ю — менша за головне відео,
+   з таким самим збільшенням на hover. */
+.hero-congrats_steps-item-video .hero-congrats_steps-video-play {
+    width: 56px;
+    height: 56px;
+}
+
+.hero-congrats_steps-item-video:hover .hero-congrats_steps-video-play {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.hero-congrats_steps-item-list {
+    display: flex;
+    gap: 12px;
+}
+
+.results {
+    padding: 0px 45px;
+    border: 1px solid #EDEDED;
+
+}
+
+.padding-global.results {
+    background: linear-gradient(180deg, #FFF 59.01%, #F6F6F6 100%);
+}
+
+.results_wrapper {
+    padding: 40px 0px;
+}
+
+.results_title-wrap {
+    width: 100%;
+    max-width: 564px;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.results_list {
+    width: 100%;
+    max-width: 714px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+
+.results_item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0px;
+}
+
+.results_image {
+    width: 100%;
+    max-width: 484px;
+}
+
+.results_image-2 {
+    width: 100%;
+    max-width: 209px;
+}
+
+.banner-info {
+    padding: 0px 45px;
+}
+
+
+
+
+
+.banner-info_decor {
+    width: 100%;
+    max-width: 123px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.banner-info_decor.right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: auto;
+}
+
+@media (max-width: 1110px) {
+    .banner-info_decor {
+        display: none;
+    }
+}
+
+.banner-info_big-wrapper {
+    display: flex;
+}
+
+.banner-info_wrapper {
+    width: 100%;
+    max-width: 930px;
+    margin: 0 auto;
+}
+
+.banner-info_wrapper {
+    padding: 40px 0px 0px 0px;
+}
+
+.banner-info_title-wrap {
+    width: 100%;
+    max-width: 714px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.banner-info_title-wrap-gray {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+
+.gray-60 {
+    color: rgba(65, 66, 77, 0.60);
+
+}
+
+.hero-congrats_steps-text-copy-btn {
+    display: flex;
+    gap: 10px;
+}
+
+.fw-600 {
+    font-weight: 600;
+}
+
+.hero-congrats_steps-video-play {
+    width: 84px;
+    height: 84px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: all .4s ease 0s;
+}
+
+
+
+.hero-congrats_steps-video {
+    position: relative;
+    cursor: pointer;
+}
+
+.hero-congrats_steps-video:hover .hero-congrats_steps-video-play {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+
+.banner-info_content-wrap {
+    display: flex;
+}
+
+.banner-info_content {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 0 auto;
+    margin-bottom: 18px;
+}
+
+.banner-info_content-avatar {
+    width: 100%;
+    max-width: 72px;
+}
+
+.banner-info_content-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.banner-info_content-text-2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.banner-info_list-title {
+    margin-top: 45px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.banner-info_list {
+    display: flex;
+    padding: 0px 43px;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.banner-info_list-item {
+    width: 100%;
+    max-width: 143px;
+}
+
+.banner-info_image-big {
+    margin-top: 40px;
+}
+/* Інлайн-плеєр відео (клас is-playing додає JS при кліку) — iframe заповнює
+   бокс, зберігаючи пропорції прев'ю, щоб верстка не стрибала. */
+.hero-congrats_steps-video.is-playing,
+.hero-congrats_steps-item-video.is-playing {
+    overflow: hidden;
+}
+
+.hero-congrats_steps-video.is-playing iframe {
+    width: 100%;
+    aspect-ratio: 2094 / 1266;
+    display: block;
+    border: 0;
+    border-radius: inherit;
+}
+
+.hero-congrats_steps-item-video.is-playing iframe {
+    width: 100%;
+    aspect-ratio: 674 / 1020;
+    display: block;
+    border: 0;
+    border-radius: inherit;
+}
