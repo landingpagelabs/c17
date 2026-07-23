@@ -70,6 +70,16 @@ html {
   align-items: center;
   background-color: #FFF;
   border-radius: 50%;
+  /* Figma 5813:3928 */
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.02),
+    0 8px 16px rgba(0, 0, 0, 0.06),
+    0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+/* CTA label — the shared Figma component (5082:24330) is SemiBold. */
+.cta-main .text-label-large {
+  font-weight: 600;
 }
 
 .cta-main {
@@ -150,6 +160,14 @@ html {
 .fw-600-black {
   font-weight: 600 !important;
   color: #1a1a1a;
+}
+
+/* Referenced by the section intro paragraphs (services/compare/quote) —
+   the rule was missing, so they rendered at the label default 600.
+   !important like .fw-600-black: the label classes set their own weight
+   and are defined later in this file. */
+.fw-400 {
+  font-weight: 400 !important;
 }
 
 /* -------------------------------- Headings -------------------------- */

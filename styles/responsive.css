@@ -73,12 +73,27 @@
     font-size: 10px;
   }
 
+  /* Kept at 10px (not the blanket -2px): the results chips (5807:4904) and
+     the CTA-strapline number badges (5813:3928) are both 10px in the 390w
+     Figma frames. */
   .text-label-triple-extra-small {
-    font-size: 8px;
+    font-size: 10px;
   }
 
   .text-label-mini-large {
     font-size: 14px;
+  }
+
+  /* Section intro paragraphs (services/compare/quote) — 16px on mobile per
+     the annotations on 5744:13057 / 5744:13122. */
+  .text-label-x-large.fw-400 {
+    font-size: 16px;
+  }
+
+  /* CTA label keeps the component's 18px (Figma 5082:24330) instead of the
+     blanket label downscale. */
+  .cta-main .text-label-large {
+    font-size: 18px;
   }
 
   /* -------------------------- Враппери → 25px 0 -------------------- */
@@ -157,6 +172,12 @@
     max-width: 100px;
   }
 
+  /* Eyebrow on one line (5807:4855): the Figma text runs full-bleed 390px,
+     so let it escape the 20px gutters instead of shrinking the type. */
+  .hero_strapline {
+    margin-inline: -20px;
+  }
+
   .hero_text-wrap {
     margin-bottom: 20px;
   }
@@ -173,6 +194,28 @@
   .hero-inner_list-item {
     width: calc(100% / 2 - 5px);
 
+  }
+
+  /* Results cards — uniform 100px height like Figma 5807:4892; logos are
+     height-capped so tall marks can't stretch their row. */
+  .hero-inner_list-item:not(.center) {
+    height: 100px;
+    padding: 14px 0;
+    justify-content: center;
+  }
+
+  .hero-inner_list-item:not(.center) .hero-inner_list-image {
+    margin-bottom: 12px;
+  }
+
+  .hero-inner_list-item:not(.center) .hero-inner_list-image img {
+    max-height: 26px;
+    object-fit: contain;
+  }
+
+  /* Chip labels stay on one line so every card keeps the same height */
+  .hero-inner_list-text .chip-variant {
+    white-space: nowrap;
   }
 
   .hero-inner_list-item.center {
@@ -215,8 +258,14 @@
     margin-bottom: 10px;
   }
 
+  /* Body copy inside the clock — 16px/500 on a ~252px measure so all three
+     steps fit the circle (Figma 5832:5405 "This text needs to fit"). */
   .hiw_step-text {
-    font-size: 14px;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    max-width: 264px;
+    margin-inline: auto;
     margin-bottom: 16px;
   }
 
@@ -281,14 +330,22 @@
     margin-top: 40px;
   }
 
+  /* Stats → 2×2 grid (annotation on 5744:13007 "Can we fit two columns
+     in?"); the #EDEDED list background + 1px gap draws the hairlines. */
   .banner_list {
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
 
   .banner_item {
     max-width: 100%;
-    border-top: none;
-    min-height: 140px;
+    border: none;
+    min-height: 132px;
+    padding: 16px 8px;
+  }
+
+  .banner_item svg {
+    margin-bottom: 8px;
   }
 
   .banner_decor {
@@ -305,8 +362,9 @@
     font-size: 24px;
   }
 
+  /* 20px doesn't fit a half-width cell ("Attributed Revenue") */
   .banner_item-text {
-    font-size: 20px;
+    font-size: 14px;
   }
 
   .compare_table-wrap {
@@ -321,9 +379,13 @@
     top: -20px;
   }
 
+  /* Fran testimonial (5744:13846): avatar + copy stay side by side like the
+     desktop / Figma row, just centered as a unit under the form. */
   .campaign_form-bottom-left {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
   }
 
   .campaign_image {
@@ -382,21 +444,31 @@
     height: 0;
   }
 
-  /* Таблиця й нижній банер — фіксована ширина, не стискаються */
-  .compare_table,
-  .compare_table-bottom {
+  /* Таблиця — фіксована ширина, не стискається */
+  .compare_table {
     width: 700px;
     max-width: none;
   }
 
+  /* Hormozi banner (5744:13258 "This is broken"): pinned to the visible
+     viewport with sticky so it no longer scrolls (and clips) with the
+     700px table above it. */
   .compare_table-bottom {
+    width: 100%;
+    position: sticky;
+    left: 0;
     justify-content: flex-start;
     /* Місце під картинку зліва (position:absolute, ~107px), щоб текст не залазив */
-    padding-left: 120px;
+    padding-left: 116px;
+    padding-right: 14px;
   }
 
   .compare_table-bottom-text {
     max-width: 268px;
+  }
+
+  .compare_table-bottom-text .text-body-regular {
+    font-size: 13px;
   }
 
   /* Колонки — фіксовані, щоб декор точно збігався */
@@ -511,10 +583,6 @@
   .campaign_form-bottom {
     padding: 110px 0px 10px 0px;
     gap: 10px;
-  }
-
-  .campaign_form-bottom-left {
-    align-items: center;
   }
 
   .campaign_form-bottom-right-text {
