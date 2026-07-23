@@ -9,7 +9,7 @@ export function Team({ data }: { data: TeamType | null }) {
     <section className="team">
       <div className="team_image-top">
         <img
-          src={imageSrc(data.topImage, "/images/sections/team/team-top-image.png")}
+          src={imageSrc(data.topImage, "/images/sections/team/team-top-image.webp")}
           alt=""
         />
       </div>
@@ -29,7 +29,7 @@ export function Team({ data }: { data: TeamType | null }) {
             </div>
 
             <div className="team_image">
-              <img src={imageSrc(data.image, "/images/sections/team/team.png")} alt="" />
+              <img src={imageSrc(data.image, "/images/sections/team/team.webp")} alt="" />
             </div>
 
             <CtaMain cta={data.cta} />

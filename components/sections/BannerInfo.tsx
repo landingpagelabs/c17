@@ -10,7 +10,7 @@ export function BannerInfo({ data }: { data: BannerInfoType | null }) {
     <section className="banner-info">
       <div className="padding-global decor tb-decor">
         <div className="banner-info_decor">
-          <img src="/images/sections/congrats/decor-left.png" alt="" />
+          <img src="/images/sections/congrats/decor-left.webp" alt="" />
         </div>
         <div className="container-large">
           <div className="banner-info_big-wrapper">
@@ -57,19 +57,19 @@ export function BannerInfo({ data }: { data: BannerInfoType | null }) {
                 <img
                   src={imageSrc(
                     data.image,
-                    "/images/sections/congrats/banner-images.png"
+                    "/images/sections/congrats/banner-images.webp"
                   )}
                   alt=""
                 />
               </div>
               <div className="banner-info_image-big-mobile">
-                <img src="/images/sections/congrats/banner-images-2.png" alt="" />
+                <img src="/images/sections/congrats/banner-images-2.webp" alt="" />
               </div>
             </div>
           </div>
         </div>
         <div className="banner-info_decor right">
-          <img src="/images/sections/congrats/decor-right.png" alt="" />
+          <img src="/images/sections/congrats/decor-right.webp" alt="" />
         </div>
       </div>
     </section>

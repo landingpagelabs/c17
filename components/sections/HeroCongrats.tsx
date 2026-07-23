@@ -15,7 +15,7 @@ function StepBody({ step }: { step: CongratsStep }) {
         <img src={imageSrc(step.videoThumb, "")} alt="" />
         <img
           className="hero-congrats_steps-video-play"
-          src="/images/sections/congrats/play.png"
+          src="/images/sections/congrats/play.webp"
           alt=""
         />
       </div>
@@ -35,7 +35,7 @@ function StepBody({ step }: { step: CongratsStep }) {
           <img src={imageSrc(step.image, "")} alt="" />
         </div>
         <div className="hero-congrats_steps-image-mobile">
-          <img src="/images/sections/congrats/item-mible.png" alt="" />
+          <img src="/images/sections/congrats/item-mible.webp" alt="" />
         </div>
         <div className="hero-congrats_steps-action">
           <ActionIcon />
@@ -76,10 +76,10 @@ function StepBody({ step }: { step: CongratsStep }) {
             key={i}
           >
             {/* Прев'ю задано локальним файлом (перекриває CMS video.thumb). */}
-            <img src="/images/sections/congrats/faq-video.png" alt="" />
+            <img src="/images/sections/congrats/faq-video.webp" alt="" />
             <img
               className="hero-congrats_steps-video-play"
-              src="/images/sections/congrats/play.png"
+              src="/images/sections/congrats/play.webp"
               alt=""
             />
           </div>

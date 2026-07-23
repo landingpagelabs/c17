@@ -185,7 +185,7 @@ export function HowItWorks({ data }: { data: HowItWorksType | null }) {
               <div className="hiw">
                 <img
                   className="hiw_clock-track"
-                  src="/images/sections/how-it-works/clock-circle.png"
+                  src="/images/sections/how-it-works/clock-circle.webp"
                   alt=""
                   aria-hidden="true"
                 />

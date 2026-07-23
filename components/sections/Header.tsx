@@ -10,7 +10,7 @@ export function Header({ data }: { data: HeaderType | null }) {
         <div className="container-large">
           <div className="header_wrapper">
             <div className="header_logo">
-              <img src={imageSrc(data.logo, "/images/header/Logo.png")} alt="" />
+              <img src={imageSrc(data.logo, "/images/header/Logo.webp")} alt="" />
             </div>
 
             <nav className="header_nav">

@@ -28,7 +28,7 @@ export function Reviews({ data }: { data: ReviewsType | null }) {
                         <img src={imageSrc(item.videoThumb, "")} alt="" />
                         <img
                           className="hero-inner_list-item-lightbox-play"
-                          src="/images/sections/hero/play.png"
+                          src="/images/sections/hero/play.webp"
                           alt=""
                         />
                       </div>
@@ -60,7 +60,7 @@ export function Reviews({ data }: { data: ReviewsType | null }) {
             <div className="reviews_cta">
               <div className="reviews_cta-image">
                 <img
-                  src={imageSrc(data.ctaImage, "/images/sections/reviews/img-cta.png")}
+                  src={imageSrc(data.ctaImage, "/images/sections/reviews/img-cta.webp")}
                   alt=""
                 />
               </div>

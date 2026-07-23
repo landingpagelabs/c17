@@ -43,14 +43,14 @@ export function Hero({ data }: { data: HeroType | null }) {
     <section className="hero">
       <div className="padding-global decor">
         <div className="hero_vector">
-          <img className="hero_vector-desktop" src="/images/sections/hero/Vector.png" alt="" />
-          <img className="hero_vector-mobile" src="/images/sections/hero/Vector-mobile.png" alt="" />
+          <img className="hero_vector-desktop" src="/images/sections/hero/Vector.webp" alt="" />
+          <img className="hero_vector-mobile" src="/images/sections/hero/Vector-mobile.webp" alt="" />
         </div>
         <div className="container-large">
           <div className="hero_wrapper">
             <div className="hero_logo">
               <img
-                src={imageSrc(data.logo, "/images/sections/hero/hero-logo.png")}
+                src={imageSrc(data.logo, "/images/sections/hero/hero-logo.webp")}
                 alt=""
               />
             </div>
@@ -96,7 +96,7 @@ export function Hero({ data }: { data: HeroType | null }) {
                       key={i}
                       card={card}
                       slot={i + 1}
-                      fallback={`/images/sections/hero/item-${i + 1}.png`}
+                      fallback={`/images/sections/hero/item-${i + 1}.webp`}
                     />
                   ))}
                 </div>
@@ -111,13 +111,13 @@ export function Hero({ data }: { data: HeroType | null }) {
                         <img
                           src={imageSrc(
                             center.videoThumb,
-                            "/images/sections/hero/video.png"
+                            "/images/sections/hero/video.webp"
                           )}
                           alt=""
                         />
                         <img
                           className="hero-inner_list-item-lightbox-play"
-                          src="/images/sections/hero/play.png"
+                          src="/images/sections/hero/play.webp"
                           alt=""
                         />
                       </div>
@@ -126,7 +126,7 @@ export function Hero({ data }: { data: HeroType | null }) {
                       <img
                         src={imageSrc(
                           center?.image,
-                          "/images/sections/hero/center.png"
+                          "/images/sections/hero/center.webp"
                         )}
                         alt=""
                       />
@@ -145,7 +145,7 @@ export function Hero({ data }: { data: HeroType | null }) {
                       key={i}
                       card={card}
                       slot={i + 6}
-                      fallback={`/images/sections/hero/item-${i + 6}.png`}
+                      fallback={`/images/sections/hero/item-${i + 6}.webp`}
                     />
                   ))}
                 </div>

@@ -46,7 +46,7 @@ export function Campaign({ data }: { data: CampaignType | null }) {
     <section className="campaign" id="apply">
       <div className="padding-global decor">
         <div className="campaign_decor">
-          <img src="/images/sections/campaign/left-decor.png" alt="" />
+          <img src="/images/sections/campaign/left-decor.webp" alt="" />
         </div>
         <div className="container-large">
           <div className="campaign_wrapper-big">
@@ -179,7 +179,7 @@ export function Campaign({ data }: { data: CampaignType | null }) {
                         <img
                           src={imageSrc(
                             data.formBottom?.avatar,
-                            "/images/sections/campaign/ava.png"
+                            "/images/sections/campaign/ava.webp"
                           )}
                           alt=""
                         />
@@ -207,20 +207,20 @@ export function Campaign({ data }: { data: CampaignType | null }) {
                 <img
                   src={imageSrc(
                     data.image,
-                    "/images/sections/campaign/Frame 2147261625.png"
+                    "/images/sections/campaign/Frame 2147261625.webp"
                   )}
                   alt=""
                 />
               </div>
               <div className="campaign_image-mobile">
-                <img src="/images/sections/campaign/bot-1.png" alt="" />
+                <img src="/images/sections/campaign/bot-1.webp" alt="" />
               </div>
             </div>
 
           </div>
         </div>
         <div className="campaign_decor right">
-          <img src="/images/sections/campaign/right-decor.png" alt="" />
+          <img src="/images/sections/campaign/right-decor.webp" alt="" />
         </div>
       </div>
     </section>

@@ -58,7 +58,7 @@ export function Footer({
                 <div className="footer-head-left_logo-image">
                   <img
                     className="footer-head-left_logo-img"
-                    src={imageSrc(data.logo, "/images/footer/C17_logo.png")}
+                    src={imageSrc(data.logo, "/images/footer/C17_logo.webp")}
                     alt="C17 logo"
                   />
                 </div>
@@ -143,7 +143,7 @@ export function Footer({
                   <a href={award.href || "#"} className="item_footer-content-right" key={i}>
                     <img
                       className="item-footer-content-right_img"
-                      src={imageSrc(award.image, `/images/footer/award_${i + 1}.png`)}
+                      src={imageSrc(award.image, `/images/footer/award_${i + 1}.webp`)}
                       alt="award image"
                     />
                   </a>
@@ -156,14 +156,14 @@ export function Footer({
                 <div className="footer-bottom-left_image">
                   <img
                     className="footer-bottom-left_img"
-                    src={imageSrc(data.builtBy?.logo, "/images/footer/bottom_logo.png")}
+                    src={imageSrc(data.builtBy?.logo, "/images/footer/bottom_logo.webp")}
                     alt="LPL logo"
                   />
                   {/* The second logo is only in the home (wide) footer. */}
                   {!narrow && (
                     <img
                       className="footer-bottom-left_img-2"
-                      src="/images/footer/bottom_logo-2.png"
+                      src="/images/footer/bottom_logo-2.webp"
                       alt="LPL logo"
                     />
                   )}

@@ -24,7 +24,7 @@ export function PreCall({ data }: { data: PreCallType | null }) {
           <div className="container-large">
             <div className="header_wrapper call">
               <div className="header_logo call">
-                <img src={imageSrc(data.logo, "/images/header/Logo.png")} alt="" />
+                <img src={imageSrc(data.logo, "/images/header/Logo.webp")} alt="" />
               </div>
             </div>
           </div>
@@ -104,7 +104,7 @@ export function PreCall({ data }: { data: PreCallType | null }) {
               <div className="footer-banner_wrapper">
                 <div className="footer-banner_image">
                   <img
-                    src={imageSrc(data.footerImage, "/images/sections/call/image.png")}
+                    src={imageSrc(data.footerImage, "/images/sections/call/image.webp")}
                     alt=""
                   />
                 </div>

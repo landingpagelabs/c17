@@ -37,7 +37,7 @@ export function Services({ data }: { data: ServicesType | null }) {
                       <img
                         src={imageSrc(
                           item.image,
-                          `/images/sections/services/item-${i + 1}.png`
+                          `/images/sections/services/item-${i + 1}.webp`
                         )}
                         alt=""
                       />

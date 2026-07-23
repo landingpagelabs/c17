@@ -36,7 +36,7 @@ export function Carousel({ data }: { data: CarouselType | null }) {
                       <img
                         src={imageSrc(
                           card.image,
-                          `/images/sections/carousel/cards/${card.brand}.png`
+                          `/images/sections/carousel/cards/${card.brand}.webp`
                         )}
                         alt={`${card.name} customer testimonial`}
                       />
@@ -64,7 +64,7 @@ export function Carousel({ data }: { data: CarouselType | null }) {
                     <img
                       src={imageSrc(
                         card.icon,
-                        `/images/sections/carousel/icons/${card.brand}.svg`
+                        `/images/sections/carousel/icons/${card.brand}.webp`
                       )}
                       alt=""
                     />

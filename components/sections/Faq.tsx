@@ -46,7 +46,7 @@ export function Faq({ data }: { data: FaqType | null }) {
                 className="faq-bottom_img"
                 src={imageSrc(
                   data.bottomImage,
-                  "/images/sections/faq/faq_bottom_image.png"
+                  "/images/sections/faq/faq_bottom_image.webp"
                 )}
                 alt="faq bottom image"
               />
@@ -54,7 +54,7 @@ export function Faq({ data }: { data: FaqType | null }) {
             <div className="faq_bottom-mobile">
               <img
                 className="faq-bottom_img"
-                src="/images/sections/faq/faq-mobile.png"
+                src="/images/sections/faq/faq-mobile.webp"
                 alt="faq bottom image"
               />
             </div>

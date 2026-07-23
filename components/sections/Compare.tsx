@@ -59,7 +59,7 @@ export function Compare({ data }: { data: CompareType | null }) {
                   <div className="compare_table-col first opacity"></div>
                   <div className="compare_table-col top second">
                     <img
-                      src={imageSrc(cols?.c17Logo, "/images/sections/compare/c17-logo.png")}
+                      src={imageSrc(cols?.c17Logo, "/images/sections/compare/c17-logo.webp")}
                       alt=""
                     />
                     <div className="text-body-small white">{cols?.c17Note}</div>
@@ -104,7 +104,7 @@ export function Compare({ data }: { data: CompareType | null }) {
                   <img
                     src={imageSrc(
                       data.bottomImage,
-                      "/images/sections/compare/image-table-bot.png"
+                      "/images/sections/compare/image-table-bot.webp"
                     )}
                     alt=""
                   />
@@ -133,7 +133,7 @@ export function Compare({ data }: { data: CompareType | null }) {
                 <div className="compare_strapline-info">
                   <div className="compare_strapline-image">
                     <img
-                      src={imageSrc(t0?.avatar, "/images/sections/compare/avatar.png")}
+                      src={imageSrc(t0?.avatar, "/images/sections/compare/avatar.webp")}
                       alt=""
                     />
                   </div>
@@ -154,7 +154,7 @@ export function Compare({ data }: { data: CompareType | null }) {
                 <div className="compare_strapline-info">
                   <div className="compare_strapline-image">
                     <img
-                      src={imageSrc(t1?.avatar, "/images/sections/compare/avatar-2.png")}
+                      src={imageSrc(t1?.avatar, "/images/sections/compare/avatar-2.webp")}
                       alt=""
                     />
                   </div>
