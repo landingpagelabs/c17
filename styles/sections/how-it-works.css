@@ -635,6 +635,22 @@
         display: none;
     }
 
+    /* Scroll-to-reveal (annotation 5832:5397): the wrapper becomes a tall
+       runway, the clock pins with CSS sticky (no gsap pin — it fights the
+       mobile URL-bar resize) and how-it-works.js advances the step via
+       IntersectionObserver sentinels dropped into the runway. */
+    .how-it-works_animation {
+        position: relative;
+        height: 240vh;
+        height: 240svh;
+    }
+
+    .hiw {
+        position: sticky;
+        /* Vertically centered in the small viewport; clamped for tablets */
+        top: clamp(70px, calc(50svh - 50vw + 20px), 40svh);
+    }
+
     .hiw_nav {
         display: flex;
         gap: 10px;
@@ -680,5 +696,17 @@
     .hiw_nav-btn:disabled {
         opacity: .4;
         cursor: default;
+    }
+}
+
+/* Reduced motion: no runway/pin — the Prev/Next buttons drive the steps */
+@media (max-width: 991px) and (prefers-reduced-motion: reduce) {
+    .how-it-works_animation {
+        height: auto;
+    }
+
+    .hiw {
+        position: relative;
+        top: auto;
     }
 }
