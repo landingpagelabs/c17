@@ -392,9 +392,3 @@
     align-items: center;
     justify-content: center;
 }
-.campaign_image{
-    width: 100%;
-    max-width: 930px;
-    margin: 0 auto;
-    margin-top: 50px;
-}

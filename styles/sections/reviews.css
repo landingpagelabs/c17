@@ -141,6 +141,29 @@
     z-index: 2;
 }
 
+/* Той самий білий фейд перекривав бокові лінії секції (z-index 2 над бордерами),
+   і вертикальний штрих "рвався" між Reviews та Apply. Домальовуємо лінії поверх
+   фейду точно по бордерах. */
+.reviews .padding-global.decor::before,
+.reviews .padding-global.decor::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: #EDEDED;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.reviews .padding-global.decor::before {
+    left: -1px;
+}
+
+.reviews .padding-global.decor::after {
+    right: -1px;
+}
+
 /* -------- Expand / collapse (Load More ↔ Show Less) -------- */
 /* За замовчуванням (згорнуто): видно плюс, minus прихований */
 .reviews_cta-icon-minus {

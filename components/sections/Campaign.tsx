@@ -215,24 +215,27 @@ export function Campaign({ data }: { data: CampaignType | null }) {
                 </form>
               </div>
 
-              <div className="campaign_image">
-                <img
-                  {...imageProps(
-                    data.image,
-                    "/images/sections/campaign/Frame 2147261625.webp",
-                    { width: 1080 }
-                  )}
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
               <div className="campaign_image-mobile">
                 <img src="/images/sections/campaign/bot-1.webp" width={1953} height={163} alt="" loading="lazy" decoding="async" />
               </div>
             </div>
 
           </div>
+        </div>
+        {/* Trust strip lives at padding-global level (outside .container-large)
+            so its top hairline can run rail-to-rail between the chevron
+            columns' inner hairlines, as in Figma (5257:10515 / 5257:10449). */}
+        <div className="campaign_image">
+          <img
+            {...imageProps(
+              data.image,
+              "/images/sections/campaign/Frame 2147261625.webp",
+              { width: 1080 }
+            )}
+            alt=""
+            loading="lazy"
+            decoding="async"
+          />
         </div>
         <div className="campaign_decor right">
           <img src="/images/sections/campaign/right-decor.webp" width={392} height={2379} alt="" loading="lazy" decoding="async" />

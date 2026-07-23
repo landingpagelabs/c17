@@ -1,5 +1,6 @@
+/* Figma 5098:10332: H2 сидить на 40px нижче лінії секції Apply */
 .faq_wrapper {
-    padding-top: 0px;
+    padding-top: 40px;
 }
 
 .faq{

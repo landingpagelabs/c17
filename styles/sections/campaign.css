@@ -35,8 +35,10 @@
     border-left: 1px solid #EDEDED;
 }
 
+/* Нижній відступ секції тепер дає .campaign_image (траст-стріп живе поза
+   .container-large, щоб його верхня лінія йшла від рейки до рейки). */
 .campaign_wrapper {
-    padding: 45px 0px;
+    padding: 45px 0px 0px;
 }
 
 .campaign_strapline {
@@ -66,9 +68,20 @@
     pointer-events: none;
 }
 
-/* Hairline above the trust strip (Figma 5257:10515 — 1px top stroke only) */
+/* Hairline above the trust strip (Figma 5257:10515 — 1px top stroke only).
+   The strip sits at padding-global level; side margins land the stroke ends
+   exactly on the chevron columns' inner hairlines (138px rail − 20px
+   .padding-global side padding). */
 .campaign_image {
     border-top: 1px solid #EDEDED;
+    margin: 50px 118px 45px;
+    display: flex;
+    justify-content: center;
+}
+
+.campaign_image img {
+    width: 100%;
+    max-width: 930px;
 }
 
 /* Close the CTA box under the trust strip (Figma 5257:10449 bottom side) */
