@@ -30,6 +30,7 @@ export function Carousel({ data }: { data: CarouselType | null }) {
                     type="button"
                     data-brand={card.brand}
                     data-name={card.name}
+                    data-card-video={card.videoUrl || ""}
                     key={i}
                   >
                     <span className="carousel_card-media">

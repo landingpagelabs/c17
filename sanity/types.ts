@@ -92,7 +92,7 @@ export type Compare = {
 export type Carousel = {
   strapline?: string;
   title?: string;
-  cards?: { brand?: string; name?: string; image?: Image; icon?: Image }[];
+  cards?: { brand?: string; name?: string; image?: Image; icon?: Image; videoUrl?: string }[];
   activeBrand?: string;
   videoUrl?: string;
   modalCta?: CtaLink;

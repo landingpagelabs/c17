@@ -279,6 +279,12 @@ export const carousel = defineType({
               type: "image",
               options: { hotspot: true },
             }),
+            defineField({
+              name: "videoUrl",
+              title: "Video URL (YouTube)",
+              type: "url",
+              description: "This card's testimonial video. Falls back to the carousel-level video if empty.",
+            }),
           ],
           preview: { select: { title: "name", subtitle: "brand", media: "image" } },
         }),
