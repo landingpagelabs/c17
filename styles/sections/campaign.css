@@ -74,7 +74,10 @@
    .padding-global side padding). */
 .campaign_image {
     border-top: 1px solid #EDEDED;
-    margin: 50px 118px 45px;
+    /* Bottom = 0: Figma runs the strip flush to the section's bottom
+       hairline — the exported webp already carries the breathing room
+       below the laurels (Tyce 07-24: reduce the gap under the strip). */
+    margin: 50px 118px 0;
     display: flex;
     justify-content: center;
 }

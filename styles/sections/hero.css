@@ -54,10 +54,10 @@
         bottom: 0;
         left: 50%;
         transform: translateX(-50%);
-        /* Content width, sitting inside the vertical hairlines and starting
-           just under the scroll chevron (Figma 5082:24665 / 5082:24349 —
-           Tyce 07-23 night, supersedes the full-bleed call). */
-        width: min(1188px, 100%);
+        /* Flap runs hairline-to-hairline (Tyce 07-24, supersedes the 1188
+           content-width call): 100% = the .padding-global padding box, whose
+           edges sit exactly on the section's 1px side strokes. */
+        width: 100%;
         max-width: none;
         height: auto;
     }
@@ -66,6 +66,13 @@
         width: 100%;
         max-width: none;
         height: auto;
+        /* Keep the flap's height identical to the old 1188-wide render
+           (1188 × 1271/2880 intrinsic ratio) while the box stretches to the
+           strokes — the curve flattens on wide screens instead of the flap
+           growing taller and swallowing the CTA. Mobile resets this (its
+           Vector-mobile is portrait). */
+        max-height: calc(1188px * 1271 / 2880);
+        object-fit: fill;
     }
 
     .hero-inner {
@@ -239,4 +246,32 @@
 
 .hero-inner_list-item .chip-variant.is-active {
     display: block;
+}
+
+/* Long pool labels must not wrap and stretch the chip row */
+.hero-inner_list-text .chip-variant {
+    white-space: nowrap;
+}
+
+/* Desktop cards keep Figma's fixed 200×115 (5082:25205) while the glitch wave
+   rotates logos: every mark sits in a fixed 22.57px band — Figma normalizes
+   all logos to that height, widths follow each logo's own aspect ratio. This
+   replaces the per-slot item-N width caps (tuned to the original leaders),
+   which let pool logos with other aspect ratios change the card height.
+   Mobile (≤991px) has its own fixed-height treatment in responsive.css. */
+@media (min-width: 992px) {
+    .hero-inner_list-item:not(.center) {
+        height: 115px;
+    }
+
+    .hero-inner_list-item:not(.center) .hero-inner_list-image {
+        height: 22.57px;
+        max-width: 160px;
+    }
+
+    .hero-inner_list-item:not(.center) .hero-inner_list-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
 }

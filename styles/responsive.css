@@ -238,6 +238,12 @@
     bottom: 34px;
   }
 
+  /* Vector-mobile — портретний, десктопний кламп висоти тут не потрібен */
+  .hero_vector img {
+    max-height: none;
+    object-fit: initial;
+  }
+
   .quote_submit {
     font-size: 16px;
   }
