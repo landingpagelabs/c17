@@ -101,6 +101,24 @@ export const hero = defineType({
         "Exactly 4 cards — each slot has its own size in CSS, so adding more will render unstyled.",
       validation: (rule) => rule.max(4),
     }),
+    defineField({
+      name: "leftCardsPool",
+      title: "Left column - rotation pool",
+      type: "array",
+      of: [{ type: "heroCard" }],
+      group: "cards",
+      description:
+        "Extra chips the glitch wave rotates through. Entry 1 cycles in slot 1, entry 2 in slot 2, ... entry 5 back in slot 1, and so on.",
+    }),
+    defineField({
+      name: "rightCardsPool",
+      title: "Right column - rotation pool",
+      type: "array",
+      of: [{ type: "heroCard" }],
+      group: "cards",
+      description:
+        "Extra chips the glitch wave rotates through, round-robin across the four right slots.",
+    }),
   ],
   preview: {
     prepare: () => ({ title: "Hero" }),

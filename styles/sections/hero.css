@@ -224,3 +224,12 @@
     }
 
    
+/* Chip rotation stacks: every variant is server-rendered; the glitch wave in
+   all.js moves .is-active through the stack. */
+.hero-inner_list-item .chip-variant {
+    display: none;
+}
+
+.hero-inner_list-item .chip-variant.is-active {
+    display: block;
+}

@@ -6,13 +6,17 @@ import type { Hero as HeroType, HeroCard } from "../../sanity/types";
 /**
  * Each card slot has its own size in hero.css, keyed by `item-N` where N runs
  * 1-9 across the three columns. Slot 1 uses the base style and has no class.
+ *
+ * `cards` is the slot's rotation stack: cards[0] is the visible leader, the
+ * rest are pool entries the glitch wave in all.js cycles through (variants
+ * are all server-rendered; only `.is-active` is displayed).
  */
 function Card({
-  card,
+  cards,
   slot,
   fallback,
 }: {
-  card: HeroCard;
+  cards: HeroCard[];
   slot: number;
   fallback: string;
 }) {
@@ -25,13 +29,46 @@ function Card({
             : `hero-inner_list-image item-${slot}`
         }
       >
-        <img {...imageProps(card.image, fallback, { width: 200 })} alt="" loading="lazy" decoding="async" />
+        {cards.map((card, k) => (
+          <img
+            key={k}
+            {...imageProps(card.image, k === 0 ? fallback : "", { width: 200 })}
+            alt=""
+            loading="lazy"
+            decoding="async"
+            className={k === 0 ? "chip-variant is-active" : "chip-variant"}
+            data-pool={k}
+          />
+        ))}
       </div>
       <div className="hero-inner_list-text">
-        <p className="text-label-triple-extra-small fw-600-black">{card.label}</p>
+        {cards.map((card, k) => (
+          <p
+            key={k}
+            className={
+              "text-label-triple-extra-small fw-600-black chip-variant" +
+              (k === 0 ? " is-active" : "")
+            }
+            data-pool={k}
+          >
+            {card.label}
+          </p>
+        ))}
       </div>
     </div>
   );
+}
+
+/** Slot i shows leader cards[i]; pool entries rotate in round-robin (entry
+ *  i, i+4, i+8, ... belong to slot i). */
+function slotStack(
+  leaders: HeroCard[] | undefined,
+  pool: HeroCard[] | undefined,
+  i: number
+): HeroCard[] {
+  const leader = leaders?.[i];
+  const rest = (pool ?? []).filter((_, idx) => idx % 4 === i);
+  return [leader, ...rest].filter(Boolean) as HeroCard[];
 }
 
 export function Hero({ data }: { data: HeroType | null }) {
@@ -107,10 +144,10 @@ export function Hero({ data }: { data: HeroType | null }) {
 
               <div className="hero-inner_list">
                 <div className="hero-inner_list-left">
-                  {data.leftCards?.map((card, i) => (
+                  {data.leftCards?.map((_, i) => (
                     <Card
                       key={i}
-                      card={card}
+                      cards={slotStack(data.leftCards, data.leftCardsPool, i)}
                       slot={i + 1}
                       fallback={`/images/sections/hero/item-${i + 1}.webp`}
                     />
@@ -161,10 +198,10 @@ export function Hero({ data }: { data: HeroType | null }) {
                 </div>
 
                 <div className="hero-inner_list-right">
-                  {data.rightCards?.map((card, i) => (
+                  {data.rightCards?.map((_, i) => (
                     <Card
                       key={i}
-                      card={card}
+                      cards={slotStack(data.rightCards, data.rightCardsPool, i)}
                       slot={i + 6}
                       fallback={`/images/sections/hero/item-${i + 6}.webp`}
                     />

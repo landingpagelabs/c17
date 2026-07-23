@@ -24,6 +24,7 @@ export type Hero = {
   cta?: CtaLink;
   innerTitle?: string;
   leftCards?: HeroCard[];
+  leftCardsPool?: HeroCard[];
   centerCard?: {
     image?: Image;
     label?: string;
@@ -31,6 +32,7 @@ export type Hero = {
     videoUrl?: string;
   };
   rightCards?: HeroCard[];
+  rightCardsPool?: HeroCard[];
 };
 
 export type HowItWorks = {
