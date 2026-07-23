@@ -6,11 +6,10 @@
 export const SITE_URL = "https://c17.ai";
 
 /**
- * Flip to true when c17.ai DNS goes live. While false, every page carries
- * noindex and robots.txt disallows all crawling — the vercel.app domain
- * must not get indexed.
+ * Flipped 2026-07-24: c17.ai DNS is live and serving this site. Controls
+ * indexability — robots.txt, sitemap exposure, and the global noindex.
  */
-export const SITE_LIVE = false;
+export const SITE_LIVE = true;
 
 export const SITE_NAME = "C17 Lab";
 export const SITE_TITLE = "C17 | AI Sales As A Service";
