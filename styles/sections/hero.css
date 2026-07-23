@@ -54,10 +54,16 @@
         bottom: 0;
         left: 50%;
         transform: translateX(-50%);
+        /* Full-bleed: the flap fills the viewport width on every screen
+           (Tyce 07-23), escaping the section's side padding. */
+        width: 100vw;
+        max-width: none;
+        height: auto;
+    }
+
+    .hero_vector img {
         width: 100%;
-        /* Content-column width, per design: at wider viewports the flap must
-           NOT keep growing (it climbed ~110px too high at 1920). */
-        max-width: 1188px;
+        max-width: none;
         height: auto;
     }
 

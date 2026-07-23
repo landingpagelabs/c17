@@ -33,6 +33,10 @@ export function Header({ data }: { data: HeaderType | null }) {
                   <a
                     className="header_cta-calendar text-label-medium"
                     href={data.bookCall.href || "#"}
+                    // iClosed popup (widget.js turns this into a click trigger).
+                    // Currently the Pilot Call event — swap the URL when Enzo
+                    // creates a general book-a-call calendar.
+                    data-iclosed-link="https://app.iclosed.io/e/c17lab/pilot-call-w-c17-lab"
                   >
                     {data.bookCall.label}
                   </a>
