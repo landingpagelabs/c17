@@ -43,8 +43,24 @@ export function Hero({ data }: { data: HeroType | null }) {
     <section className="hero">
       <div className="padding-global decor">
         <div className="hero_vector">
-          <img className="hero_vector-desktop" src="/images/sections/hero/Vector.webp" alt="" />
-          <img className="hero_vector-mobile" src="/images/sections/hero/Vector-mobile.webp" alt="" />
+          {/* One <picture> instead of two CSS-toggled imgs: only the matching
+              source downloads, and it's the page's LCP element on mobile —
+              the single fetchPriority="high" image on the site. */}
+          <picture>
+            <source
+              media="(max-width: 991px)"
+              srcSet="/images/sections/hero/Vector-mobile.webp"
+              width={1170}
+              height={2629}
+            />
+            <img
+              src="/images/sections/hero/Vector.webp"
+              width={2880}
+              height={1271}
+              fetchPriority="high"
+              alt=""
+            />
+          </picture>
         </div>
         <div className="container-large">
           <div className="hero_wrapper">

@@ -36,6 +36,12 @@ svg {
   max-width: 100%;
 }
 
+/* Images carry width/height attributes for CLS-free lazy loading; height:auto
+   keeps them responsive when max-width clamps (class-based heights still win). */
+img {
+  height: auto;
+}
+
 /* 7. Inherit fonts for form controls */
 input,
 button,

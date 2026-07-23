@@ -193,14 +193,6 @@
     bottom: 40px;
   }
 
-  .hero_vector-desktop {
-    display: none;
-  }
-
-  .hero_vector-mobile {
-    display: block;
-  }
-
   .quote_submit {
     font-size: 16px;
   }
