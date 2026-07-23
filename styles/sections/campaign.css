@@ -20,6 +20,10 @@
     position: absolute;
     top: 0;
     left: 0;
+    bottom: 0;
+    /* Hairline between the chevron rail and the form column
+       (Figma 5257:10549 / 5257:10694) */
+    border-right: 1px solid #EDEDED;
 }
 
 .campaign_decor.right {
@@ -27,6 +31,8 @@
     top: 0;
     right: 0;
     left: auto;
+    border-right: 0;
+    border-left: 1px solid #EDEDED;
 }
 
 .campaign_wrapper {
