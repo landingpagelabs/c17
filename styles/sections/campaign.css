@@ -71,6 +71,11 @@
     border-top: 1px solid #EDEDED;
 }
 
+/* Close the CTA box under the trust strip (Figma 5257:10449 bottom side) */
+.campaign .padding-global.decor {
+    border-bottom: 1px solid #EDEDED;
+}
+
 .campaign_image-mobile {
     display: none;
 }
