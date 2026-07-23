@@ -190,7 +190,9 @@
   .hero_vector {
     width: 100%;
     height: auto;
-    bottom: 40px;
+    /* Design has the flap starting ~75px above the results title; at
+       bottom:40px it sat 52px too low on a 390px screen. */
+    bottom: 92px;
   }
 
   .quote_submit {

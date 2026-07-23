@@ -55,7 +55,9 @@
         left: 50%;
         transform: translateX(-50%);
         width: 100%;
-        max-width: 1440px;
+        /* Content-column width, per design: at wider viewports the flap must
+           NOT keep growing (it climbed ~110px too high at 1920). */
+        max-width: 1188px;
         height: auto;
     }
 
