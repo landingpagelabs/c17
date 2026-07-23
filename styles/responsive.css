@@ -346,6 +346,11 @@
   .footer-head_left {
     margin: 0 auto;
     margin-bottom: 50px;
+    /* Логотип C17 LAB + tagline + CTA по центру на мобілі */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
   .footer_bottom {
