@@ -63,20 +63,15 @@ export function Campaign({ data }: { data: CampaignType | null }) {
                       className={i === 0 ? "campaign_strapline-item active" : "campaign_strapline-item"}
                       key={i}
                     >
+                      <p className="text-body-regular gray">[</p>
                       <img
                         {...imageProps(icon, `/images/sections/campaign/strapline-${i + 1}.svg`, { width: 20 })}
                         alt=""
                         loading="lazy"
                         decoding="async"
                       />
-                      {/* Supabird-style status: lead word muted, the object
-                          phrase accented (brand purple italic). */}
-                      <p className="text-body-regular gray campaign_strapline-text">
-                        {(text || "").split(" ")[0]}{" "}
-                        <em className="campaign_strapline-accent">
-                          {(text || "").split(" ").slice(1).join(" ")}
-                        </em>
-                      </p>
+                      <p className="text-body-regular gray"> {text} </p>
+                      <p className="text-body-regular gray">]</p>
                     </div>
                   );
                 })}

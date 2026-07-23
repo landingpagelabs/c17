@@ -344,39 +344,3 @@
     color: #5900ff;
     text-decoration: underline;
 }
-
-/* Supabird-style rotating status (replaces the bracket chips): the accent
-   phrase pops in brand purple italic; each state rises in word-by-word. */
-.campaign_strapline-text {
-    font-size: 18px;
-}
-
-.campaign_strapline-accent {
-    font-style: italic;
-    font-weight: 600;
-    color: #5900ff;
-}
-
-.campaign_strapline-item.active {
-    animation: strapline-rise 0.6s ease both;
-}
-
-.campaign_strapline-item.active img {
-    animation: strapline-pop 0.6s ease both;
-}
-
-@keyframes strapline-rise {
-    from { opacity: 0; transform: translateY(10px); }
-    to   { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes strapline-pop {
-    0%   { transform: scale(0.6); }
-    60%  { transform: scale(1.12); }
-    100% { transform: scale(1); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .campaign_strapline-item.active,
-    .campaign_strapline-item.active img { animation: none; }
-}
