@@ -66,11 +66,23 @@ export function Faq({ data }: { data: FaqType | null }) {
                 decoding="async"
               />
             </div>
+            {/* Same two-layer treatment as desktop: board + levitating chip.
+                Board = Figma 5744:14127 exported without the chip group;
+                chip offsets = that group's box within the 348x208 frame. */}
             <div className="faq_bottom-mobile">
               <img
                 className="faq-bottom_img"
-                src="/images/sections/faq/faq-mobile.webp" width={860} height={513}
+                src="/images/sections/faq/faq-mobile-board.webp" width={1044} height={623}
                 alt="faq bottom image"
+                loading="lazy"
+                decoding="async"
+              />
+              <img
+                className="faq_chip"
+                src="/images/sections/faq/chip.webp"
+                width={700}
+                height={512}
+                alt=""
                 loading="lazy"
                 decoding="async"
               />
