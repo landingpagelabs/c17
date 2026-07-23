@@ -153,15 +153,15 @@ export function Quote({ data }: { data: QuoteType | null }) {
                   </p>
                   <div className="quote_contacts">
                     <div className="quote_control">
-                      <input type="text" placeholder={data.contacts?.namePlaceholder} required />
+                      <input type="text" name="name" autoComplete="name" placeholder={data.contacts?.namePlaceholder} required />
                       <span className="quote_error">{data.contacts?.nameError}</span>
                     </div>
                     <div className="quote_control">
-                      <input type="email" placeholder={data.contacts?.emailPlaceholder} required />
+                      <input type="email" name="email" autoComplete="email" placeholder={data.contacts?.emailPlaceholder} required />
                       <span className="quote_error">{data.contacts?.emailError}</span>
                     </div>
                     <div className="quote_control">
-                      <input type="url" placeholder={data.contacts?.urlPlaceholder} required />
+                      <input type="url" name="website" autoComplete="url" placeholder={data.contacts?.urlPlaceholder} required />
                       <span className="quote_error">{data.contacts?.urlError}</span>
                     </div>
                   </div>

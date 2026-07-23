@@ -594,3 +594,39 @@
     object-fit: cover;
     object-position: center;
 }
+/* Lit state: full brand purple with a soft glow once every field is valid */
+.quote_submit.is-active {
+    color: #5900ff;
+    text-shadow: 0 0 22px rgba(89, 0, 255, 0.35);
+}
+
+.quote_submit.is-sending {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* Simple success confirmation (replaces the form body after submit) */
+.quote_success {
+    padding: 64px 24px;
+    text-align: center;
+}
+
+.quote_success-title {
+    font-family: "PP Mori", sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.quote_success-text {
+    font-family: "PP Mori", sans-serif;
+    font-size: 16px;
+    color: #5a5a5a;
+}
+
+.quote_form-error {
+    margin-top: 14px;
+    font-family: "PP Mori", sans-serif;
+    font-size: 14px;
+    color: #d33;
+}
