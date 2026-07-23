@@ -45,7 +45,7 @@ export function Quote({ data }: { data: QuoteType | null }) {
     <section className="quote">
       <div className="padding-global decor">
         <div className="quote_decor">
-          <img src="/images/sections/pricing/decor-left.webp" alt="" />
+          <img src="/images/sections/pricing/decor-left.webp" width={392} height={2928} alt="" />
         </div>
         <div className="container-large">
           <div className="quote_wrapper">
@@ -186,7 +186,7 @@ export function Quote({ data }: { data: QuoteType | null }) {
           </div>
         </div>
         <div className="quote_decor right">
-          <img src="/images/sections/pricing/decor-right.webp" alt="" />
+          <img src="/images/sections/pricing/decor-right.webp" width={392} height={2928} alt="" />
         </div>
       </div>
     </section>

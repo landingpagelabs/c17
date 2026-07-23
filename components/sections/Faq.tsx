@@ -54,7 +54,7 @@ export function Faq({ data }: { data: FaqType | null }) {
             <div className="faq_bottom-mobile">
               <img
                 className="faq-bottom_img"
-                src="/images/sections/faq/faq-mobile.webp"
+                src="/images/sections/faq/faq-mobile.webp" width={860} height={513}
                 alt="faq bottom image"
               />
             </div>

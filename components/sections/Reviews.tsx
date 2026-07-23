@@ -28,7 +28,7 @@ export function Reviews({ data }: { data: ReviewsType | null }) {
                         <img src={imageSrc(item.videoThumb, "")} alt="" />
                         <img
                           className="hero-inner_list-item-lightbox-play"
-                          src="/images/sections/hero/play.webp"
+                          src="/images/sections/hero/play.webp" width={141} height={141}
                           alt=""
                         />
                       </div>

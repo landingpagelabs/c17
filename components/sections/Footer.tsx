@@ -163,7 +163,7 @@ export function Footer({
                   {!narrow && (
                     <img
                       className="footer-bottom-left_img-2"
-                      src="/images/footer/bottom_logo-2.webp"
+                      src="/images/footer/bottom_logo-2.webp" width={78} height={78}
                       alt="LPL logo"
                     />
                   )}

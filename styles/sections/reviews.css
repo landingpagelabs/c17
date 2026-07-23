@@ -93,6 +93,15 @@
     max-width: 44px;
 }
 
+/* Reserve the avatar box before its (lazy) image arrives, so Masonry measures
+   the right item height on first layout. */
+.reviews_avatar img {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
 .reviews_info-content {}
 
 .reviews_cta {
